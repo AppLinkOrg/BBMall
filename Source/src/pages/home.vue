@@ -423,14 +423,7 @@ class Content extends AppBase {
     document.querySelector("body").classList.remove("open-tray-menu");
   }
   onMyShow() {
-    window.addEventListener("scroll", this.scrollToTop);
-  }
-  scrollToTop() {
-    var scrollTop =
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop;
-    console.log(scrollTop);
+    //window.addEventListener("scroll", this.scrollToTop);
   }
   goTop(){
       target.scrollIntoView();
@@ -440,7 +433,6 @@ var content = new Content();
 var body = content.generateBodyJson();
 body.methods.showMenu = content.showMenu;
 body.methods.hideMenu = content.hideMenu;
-body.methods.scrollToTop = content.scrollToTop;
 body.methods.goTop = content.goTop;
 
 export default body;

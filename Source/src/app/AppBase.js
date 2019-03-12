@@ -73,6 +73,8 @@ export class AppBase {
         this.onMyShow();
       });
     }
+
+    window.addEventListener("scroll", this.scrollToTop);
   }
 
   onMyShow() {
@@ -122,7 +124,9 @@ export class AppBase {
         takePhoto: base.takePhoto,
         choosePhoto: base.choosePhoto,
         uploadFile: base.uploadFile,
-        gotoGoods: base.gotoGoods
+        gotoGoods: base.gotoGoods,
+        scrollToTop: base.scrollToTop,
+        scrollTopChange: base.scrollTopChange
       },
       onMyLoad: base.onMyLoad,
       onMyShow: base.onMyShow,
@@ -170,6 +174,19 @@ export class AppBase {
       duration: (message.length / 5) * 1000 + 3000
     });
   }
+
+  scrollToTop() {
+    var scrollTop =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
+    this.scrollTopChange(scrollTop);
+  }
+  scrollTopChange(top){
+    //console.log(top);
+  }
+
+
   info(message) {
     MessageBox.alert(message);
   }
