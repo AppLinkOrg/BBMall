@@ -33,6 +33,7 @@ export class AppBase {
   onBaseLoad(options) {
     console.log("onBaseLoad:param");
     console.log(this.$route.params);
+    console.log(this.$route.query);
     this.onMyLoad();
   }
 
@@ -204,27 +205,27 @@ export class AppBase {
   }
   push(url, needlogin = false) {
     if (needlogin == false) {
-      this.$router.push(url);
+      return this.$router.push(url);
     } else {
       if (this.isLogin() == false) {
-        this.push("/login");
+        return this.push("/login");
       } else {
-        this.$router.push(url);
+        return this.$router.push(url);
       }
     }
   }
-  pushParam(name,param, needlogin = false) {
+  pushParam(url,param, needlogin = false) {
     console.log("go to push param");
     console.log(param);
-    console.log(name);
+    console.log(url);
     console.log(this.$router);
     if (needlogin == false) {
-      this.$router.push({ name: name, params: param});
+      return this.$router.push({ path: url, query: param});
     } else {
       if (this.isLogin() == false) {
-        this.push("/login");
+        return this.push("/login");
       } else {
-        this.$router.push({ name: name, params: param});
+        return this.$router.push({ path: url, query: param});
       }
     }
   }
@@ -304,7 +305,7 @@ export class AppBase {
   }
 
   gotoGoods(goods_id){
-    this.pushParam("goods",{id:goods_id});
+    this.pushParam("/goods",{id:goods_id});
   }
 
   //   let options: FileUploadOptions = {

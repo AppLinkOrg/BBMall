@@ -1,7 +1,10 @@
 <template>
   <div>
+    <div class='topfix' >
+            <img :src="uploadpath+'resource/'+res.back" style="height:20px;"  @click="back()" />
+    </div>
     <div class="top-story-md">
-      <div
+      <div 
         class="top-story-md--image desktop"
         :style="{backgroundImage: 'url(' + uploadpath+'story/' +story.banner+ ')'}"
       >
@@ -18,9 +21,9 @@
       </div>
       <div
         class="top-story-md--content row"
-        style="z-index: 2;background-color: rgba(237,237,237,0.52);"
+        style="z-index: 2;"
       >
-        <div class="top-story-md--content-wrapper col-xs-12 col-md-6" style="color:#343a40">
+        <div class="top-story-md--content-wrapper col-xs-12 col-md-6" >
           <h4>{{story.label}}</h4>
           <h1>{{story.title}}</h1>
           <h3>{{story.subtitle}}</h3>
@@ -87,7 +90,7 @@
             <div class="mod-stories-thumb no-margin stories-three-columns">
               <ul >
                 <li class="item-text-on-img fade-onscroll in-view" v-for="s of rstory">
-                  <a href="#" @click="pushParam('story',{id:s.rstory_id})">
+                  <a  @click="refresh(s.rstory_id)">
                     <div
                       class="wrap-img wrap-img--landscape"
                       :style="{backgroundImage: 'url(' + uploadpath+'story/' +s.rstory_banner+ ')'}"
@@ -130,9 +133,12 @@ class Content extends AppBase {
     data.rstory = [];
     return data;
   }
+  
   onMyShow() {
-    //var id=this.$route.params.id;
-    var id = 3;
+    document.querySelector("body").classList.remove("show-top-story");
+    var id=this.$route.params.id;
+    //alert(id);
+    //var id = 3;
     //document.querySelector("body").classList.add("story-page");
     this.post("goods", "story", { id: id }).then(story => {
       story.content = AppUtil.HtmlDecode(story.content);
@@ -153,10 +159,25 @@ class Content extends AppBase {
     document.querySelector("body").classList.remove("show-top-story");
   }
   scrollTopChange(top) {}
+  refresh(id){
+    this.push("/story/"+id);
+    this.onMyShow();
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
+body.methods.refresh=content.refresh;
 
 export default body;
 </script>
 
+<style scoped>
+.topfix{
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100vw;
+    padding:10px;
+}
+</style>

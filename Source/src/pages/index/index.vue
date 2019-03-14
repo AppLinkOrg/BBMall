@@ -159,7 +159,7 @@
 
             <a
               href="#"
-              @click="pushParam('goodscat',{id:cat.id})"
+              @click="pushParam('/goodscat',{id:cat.id})"
               class="view-more visible-xs"
             >{{cat.inindexfooter}}</a>
             <!-- E36: MODULE TOP IMAGE -->
@@ -171,7 +171,7 @@
             <div class="mod-stories-thumb no-margin stories-three-columns">
               <ul >
                 <li class="item-text-on-img fade-onscroll in-view" v-for="story of storylist">
-                  <a href="#" @click="pushParam('story',{id:story.id})">
+                  <a @click="push('/story/'+story.id)">
                     <div
                       class="wrap-img wrap-img--landscape"
                       :style="{backgroundImage: 'url(' + uploadpath+'story/' +story.banner+ ')'}"
@@ -268,7 +268,7 @@ class Content extends AppBase {
     if (recommgoods.gototype == "A") {
       this.gotoGoods(recommgoods.goods_id);
     } else {
-      this.pushParam("goodscat", recommgoods.goodscat_id);
+      this.pushParam("/goodscat", recommgoods.goodscat_id);
     }
   }
 }

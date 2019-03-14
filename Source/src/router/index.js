@@ -21,11 +21,11 @@ export default new Router({
         path: '/index',
         name: 'index',
         component: index
-      },{
-        path: '/story',
-        name: 'story',
-        component: story
       }]
+    },{
+      path: '/story/:id',
+      name: 'story',
+      component: story
     }
     
   ]
