@@ -1,41 +1,171 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab One
-    </ion-title>
-  </ion-toolbar>
+  <div class="top-wrapper">
+    <div class="top primary menu sticky">
+      <div class="wrap">
+        <a fade-onload to="/" title="Home" rel="home" id="logo" style="opacity: 1;">
+          <img class="logo logo-black" src="{{uploadpath}}inst/{{InstInfo.logo}}" alt="Home">
+        </a>
+        <div class="right" fade-onload style="opacity: 1;">
+          <a to="/cart">
+            <img class="basket-icn basket-icn--black" src="{{uploadpath}}resource/{{res.basket}}" alt="basket">
+            <span id="number-item-in-cart"></span>
+          </a>
+          <a class="btn-menu-burger">
+            <img class="icon-menu icon-menu--black" src="{{uploadpath}}resource/{{res.menu}}" alt="menu">
+            <i class="icon-close"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+  <div class="wrapper-main-content">
+    <div class="wrapper-main-content">
+      <div class="container-fluid">
+        <!-- Module E01: Top element -->
+        <div class="row full has-fold" *ngIf="recommgoodsT!=null">
+          <div class="col-xs-14">
+            <div class="hero-product-container" [style.background-image]="'url(' + uploadpath+'indexrecommgoods/' +recommgoodsT.photo+ ')'">
+              <div class="hero-product-description white">
+                <h4>{{recommgoodsT.intro}}</h4>
+                <h1 class="hero-heading">{{recommgoodsT.slogen}}</h1>
+                <a (click)="tryGoto(recommgoodsT)" class="btn-md">
+                  <span>{{recommgoodsT.btntxt}}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ./E01 -->
+        <div *ngFor="let cat of recommgoodscat;let i=index;">
+          <div *ngIf="i==1&&recommgoodsM!=null">
+            <div style="height:30px;"></div>
+            <div class="row full has-fold">
+              <div class="col-xs-14">
+                <!-- has uploaded mobile video: .top-img-md.top-img-md--on-mobile.top-img-md--video -->
+                <!-- if not: .top-img-md.top-img-md--on-mobile  -->
+                <div class="top-img-md top-img-md--on-mobile" [style.background-image]=" 'url(' + uploadpath+'indexrecommgoods/' +recommgoodsM.photo+ ')'">
+                  <div class="top-img-md--image" [style.background-image]=" 'url(' + uploadpath+'indexrecommgoods/' +recommgoodsM.photo+ ')'"></div>
+
+                  <div class="top-img-md--content white">
+                    <h4>{{recommgoodsM.intro}}</h4>
+
+                    <h1 class="hero-heading">{{recommgoodsM.slogen}}</h1>
+                    <a href="#" (click)="tryGoto(recommgoodsM)" class="button view-now white">{{recommgoodsM.btntxt}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="i==2&&recommgoodsML!=null&&recommgoodsMR!=null">
+            <div style="height:30px;"></div>
+            <div class="row full collection-teaser slide-to-top">
+              <div class="col-xs-14">
+                <div class="row full">
+                  <div class="col-xs-7">
+                    <div class="hero-story-container fade-onscroll in-view" [style.background-image]=" 'url(' + uploadpath+'indexrecommgoods/' +recommgoodsML.photo+ ')'">
+                      <img [src]="uploadpath+'indexrecommgoods/' +recommgoodsML.photo" alt>
+                      <div class="hero-story-description">
+                        <div class="hero-story-description__wrapper">
+                          <h4>{{recommgoodsML.intro}}</h4>
+                          <h1>{{recommgoodsML.slogen}}</h1>
+                          <a href="#" (click)="tryGoto(recommgoodsML)" class="button white view-now">{{recommgoodsML.btntxt}}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-7">
+                    <div class="hero-story-container fade-onscroll in-view" [style.background-image]=" 'url(' + uploadpath+'indexrecommgoods/' +recommgoodsMR.photo+ ')'">
+                      <img [src]="uploadpath+'indexrecommgoods/' +recommgoodsMR.photo" alt>
+                      <div class="hero-story-description">
+                        <div class="hero-story-description__wrapper">
+                          <h4>{{recommgoodsMR.intro}}</h4>
+
+                          <h1>{{recommgoodsMR.slogen}}</h1>
+                          <a href="#" (click)="tryGoto(recommgoodsMR)" class="button white view-now">{{recommgoodsMR.btntxt}}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="i==3&&recommgoodsB!=null">
+            <div style="height:30px;"></div>
+            <div class="row full has-fold">
+              <div class="col-xs-14">
+                <!-- has uploaded mobile video: .top-img-md.top-img-md--on-mobile.top-img-md--video -->
+                <!-- if not: .top-img-md.top-img-md--on-mobile  -->
+                <div class="top-img-md top-img-md--on-mobile" [style.background-image]=" 'url(' + uploadpath+'indexrecommgoods/' +recommgoodsB.photo+ ')'">
+                  <div class="top-img-md--image" [style.background-image]=" 'url(' + uploadpath+'indexrecommgoods/' +recommgoodsB.photo+ ')'"></div>
+
+                  <div class="top-img-md--content white">
+                    <h4>{{recommgoodsB.intro}}</h4>
+
+                    <h1 class="hero-heading">{{recommgoodsB.slogen}}</h1>
+                    <a href="#" (click)="tryGoto(recommgoodsB)" class="button view-now white">{{recommgoodsB.btntxt}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row full wrapper-content product-column product-four-column slide-to-top"
+            [class.product-four-column--wide]="cat.inindexgoodsstyle=='3' ">
+            <div class="col-md-12 product-column-title">
+              <h3>{{cat.inindexheader}}</h3>
+            </div>
+            <ul class="col-md-12 product-list">
+              <li class="col-md-6" *ngFor="let goods of cat.goodslist">
+                <a (click)="gotoGoods(goods.id)">
+                  <div class="item in-view">
+                    <div class="mo"></div>
+                    <div class="line">
+                      <span class="one-line">{{goods.name}}</span>
+                      <span class="price">{{goods.pricetxt}}</span>
+                    </div>
+                    <div class="container portrait loaded">
+                      <div class="img-wrapper">
+                        <img [src]="uploadpath+'goods/' +goods.cover">
+                      </div>
+                    </div>
+                    <div class="line">
+                      <p class="seriesnumber">{{goods.sno}}</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <a href="#" (click)="pushParam('/goodscat',{id:cat.id})" class="view-more visible-xs">{{cat.inindexfooter}}</a>
+            <!-- E36: MODULE TOP IMAGE -->
+          </div>
+        </div>
+        <div style="height:30px;"></div>
+        <div class="row full slide-to-top">
+          <div class="col-xs-14">
+            <div class="mod-stories-thumb no-margin stories-three-columns">
+              <ul>
+                <li class="item-text-on-img fade-onscroll in-view" *ngFor="let story of storylist">
+                  <a (click)="gotoStory(story.id)">
+                    <div class="wrap-img wrap-img--portrait" [style.background-image]=" 'url(' + uploadpath+'story/' +story.banner+ ')'">
+                      <img [src]="uploadpath+'story/' +story.banner" alt>
+                    </div>
+                    <div class="wrap-text">
+                      <h4>{{story.label}}</h4>
+                      <h3>{{story.title}}</h3>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

@@ -3441,28 +3441,7 @@ input[type=radio].custom:checked~.fake-input:before {
   border-radius: 50%
 }
 
-@font-face {
-  font-family: "Vipp Neue";
-  src:  url(VippNeue-Regular.woff2) format("woff2"), url(VippNeue-Regular.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal
-}
 
-@font-face {
-  font-family: "Vipp Neue";
-  src: url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-DemiBold.eot);
-  src: url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-DemiBold.eot?#iefix) format("embedded-opentype"), url(VippNeue-DemiBold.woff2) format("woff2"), url(VippNeue-DemiBold.ttf) format("truetype"), url(VippNeue-DemiBold.woff) format("woff");
-  font-weight: 600;
-  font-style: normal
-}
-
-@font-face {
-  font-family: "Vipp Neue";
-  src: url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-Bold.eot);
-  src: url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-Bold.eot?#iefix) format("embedded-opentype"), url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-Bold.woff2) format("woff2"), url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-Bold.ttf) format("truetype"), url(/sites/all/themes/vipp/assets/css/fonts/self-font/VippNeue-Bold.woff) format("woff");
-  font-weight: 700;
-  font-style: normal
-}
 
 .slick-slider {
   position: relative;
@@ -3568,13 +3547,13 @@ input[type=radio].custom:checked~.fake-input:before {
 }
 
 .slick-loading .slick-list {
-  background: #fff url(/sites/all/themes/vipp/assets/css/./ajax-loader.gif) center center no-repeat
+  background: #fff url(http://vipp.com/sites/all/themes/vipp/assets/css/./ajax-loader.gif) center center no-repeat
 }
 
 @font-face {
   font-family: "slick";
-  src: url(slick.eot);
-  src: url(slick.eot?#iefix) format("embedded-opentype"), url(slick.woff) format("woff"), url(slick.ttf) format("truetype"), url(slick.svg#slick) format("svg");
+  src: url(http://vipp.com/sites/all/themes/vipp/assets/css/./fonts/slick.eot);
+  src: url(http://vipp.com/sites/all/themes/vipp/assets/css/./fonts/slick.eot?#iefix) format("embedded-opentype"), url(http://vipp.com/sites/all/themes/vipp/assets/css/./fonts/slick.woff) format("woff"), url(http://vipp.com/sites/all/themes/vipp/assets/css/./fonts/slick.ttf) format("truetype"), url(http://vipp.com/sites/all/themes/vipp/assets/css/./fonts/slick.svg#slick) format("svg");
   font-weight: normal;
   font-style: normal
 }
@@ -6689,7 +6668,7 @@ screen and (min-device-pixel-ratio:1.5) {
 .zoom-container .zoom-container-inner {
   width: 100%;
   height: 100%;
-  cursor: url(/sites/all/themes/vipp/assets/img/icon-close@1x.png), pointer
+  cursor: url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-close@1x.png), pointer
 }
 
 .zoom-container .zoom-container-innest {
@@ -7472,7 +7451,7 @@ body.product-page .sidebar {
     bottom: 0;
     left: 0;
     height: 102px;
-    background: url(/sites/all/themes/vipp/assets/img/bg-bottom-popup.png) repeat-x transparent
+    background: url(http://vipp.com/sites/all/themes/vipp/assets/img/bg-bottom-popup.png) repeat-x transparent
   }
 
   .popup-container .popup-title h3 {
@@ -9243,7 +9222,7 @@ form[id*="user-profile-form"] .form-item.form-type-select label {
   padding-bottom: 10px;
   width: calc(100% - 20px);
   cursor: pointer;
-  background: transparent url(/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll 100% center;
+  background: transparent url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll 100% center;
   display: inline-block
 }
 
@@ -9706,7 +9685,7 @@ Fade product og info ud 0.63 .products .grid:hover>.container,
 }
 
 .module-product-detail .wrap-img .bg-img {
-  background: url(/sites/all/themes/vipp/assets/img/bg-product-detail.png) repeat;
+  background: url(http://vipp.com/sites/all/themes/vipp/assets/img/bg-product-detail.png) repeat;
   padding: 35px 0
 }
 
@@ -10217,7 +10196,7 @@ Fade product og info ud 0.63 .products .grid:hover>.container,
 }
 
 body.product-page.zoom-expanded .module-product-info .wrapper-gallery {
-  cursor: url(/sites/all/themes/vipp/assets/img/icon-cross-out.png), pointer
+  cursor: url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-cross-out.png), pointer
 }
 
 @media (max-width:1023px) {
@@ -12206,7 +12185,7 @@ body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-d
 .checkout-page .view-content-cart .views-frm-cart .cont-item .remove {
   width: 10px;
   height: 10px;
-  background-image: url(/sites/all/themes/vipp/assets/img/icon-remove.png);
+  background-image: url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-remove.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -12352,7 +12331,7 @@ body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-d
 }
 
 .checkout-page .shipping-select-box .dropdown dt a {
-  background: transparent url(/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll 98% center;
+  background: transparent url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll 98% center;
   display: block;
   width: 100%;
   border: 1px solid #dcdcdc;
@@ -12481,7 +12460,7 @@ body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-d
   }
 
   .checkout-page--cart-step .shipping-select-box .dropdown dt a {
-    background: transparent url(/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll calc(100% - 18px) center
+    background: transparent url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll calc(100% - 18px) center
   }
 }
 
@@ -13758,7 +13737,7 @@ body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-d
 .checkout-page--cart-step .delete-line-item {
   width: 10px;
   height: 10px;
-  background-image: url(/sites/all/themes/vipp/assets/img/icon-remove.png);
+  background-image: url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-remove.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -14476,7 +14455,7 @@ body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-d
 .checkout-page--info-detail-step .form-type-select label {
   width: calc(100% - 20px);
   cursor: pointer;
-  background: transparent url(/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll 100% center;
+  background: transparent url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-arrow-selected.png) no-repeat scroll 100% center;
   display: inline-block
 }
 
@@ -16436,7 +16415,7 @@ body:not(.has-hero-story).pages .wrapper-scroll {
 }
 
 .kitchen-configurator body {
-  background: url(/sites/all/themes/vipp/assets/img/kitchen-bg.gif);
+  background: url(http://vipp.com/sites/all/themes/vipp/assets/img/kitchen-bg.gif);
   padding-top: 0 !important
 }
 
@@ -19645,7 +19624,7 @@ html.resized body.page-stories .wrapper-main-content>div {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(/sites/all/themes/vipp/assets/img/bg-gradient-story.png)
+  background-image: url(http://vipp.com/sites/all/themes/vipp/assets/img/bg-gradient-story.png)
 }
 
 .story-item__detail {
