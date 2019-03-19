@@ -1,9 +1,86 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Story</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
+  <div class="fixtop" [style.opacity]="(scrolltop<=500)?(scrolltop*1.0/500):1">
+    <ion-toolbar>
+      <ion-title>Story</ion-title>
+    </ion-toolbar>
+  </div>
+  <div class="top-story-md">
+    <div class="top-story-md--image mobile" data-height="1706" data-width="1280" [style.background-image]=" 'url(' + uploadpath+'story/' +story.banner+ ')'">
+      <img [src]="uploadpath+'story/' +story.banner" alt='cover'>
+    </div>
+    <div class="top-story-md--content row" [class.show]="showcov==true" style="z-index: 2;">
+      <div class="top-story-md--content-wrapper col-md-12">
+        <h4>{{story.label}}</h4>
+        <h1>{{story.title}}</h1>
+        <h3>{{story.subtitle}}</h3>
+        <p style="font-size:14px;line-height:20px;">{{story.summary}}</p>
+      </div>
+    </div>
+    <!-- ./Module E42-->
+  </div>
+  <div class="wrapper-main-content">
+    <div class="container-fluid" [innerHtml]="story.content"></div>
+  </div>
+  <div class="wrapper-main-content">
+    <div class="container-fluid">
+      <div class="row full wrapper-content product-column product-four-column slide-to-top" v-if="goods.length>0">
+        <div class="col-md-12 product-column-title">
+          <h3>{{story.goodsheader}}</h3>
+        </div>
+        <ul class="col-md-12 product-list">
+          <li class="col-md-6" *ngFor="let g of goods">
+            <a (click)="gotoGoods(g.goods_id)">
+              <div class="item in-view">
+                <div class="mo">
+                  <div class="super-img" nid [style.background-image]=" 'url(' + uploadpath+'goods/' +g.goods_cover+ ')'" >
+                    <img [src]="uploadpath+'goods/' +g.goods_cover">
+                  </div>
+                </div>
+                <div class="line">
+                  <span class="one-line">{{g.goods_name}}</span>
+                  <span class="price">{{g.goods_pricetxt}}</span>
+                </div>
+                <div class="container portrait loaded">
+                  <div class="img-wrapper" style="width: 168px; height: 168px; position: relative;">
+                    <img [src]="uploadpath+'goods/' +g.goods_cover">
+                  </div>
+                </div>
+                <div class="line">
+                  <p class="seriesnumber">{{g.goods_sno}}</p>
+                  <div class="color-indicator">
+                    <!--<div class="color" style="background: #fff; border: 1px solid #a4a4a4;"></div>-->
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-<ion-content padding>
-asdbbbc
+
+      <div style="height:30px;"></div>
+      <div class="row full slide-to-top">
+        <div class="col-xs-14">
+          <div class="mod-stories-thumb no-margin stories-three-columns">
+            <ul>
+              <li class="item-text-on-img fade-onscroll in-view" *ngFor="let s of rstory">
+                <a (click)="refresh(s.rstory_id)">
+                  <div class="wrap-img wrap-img--portrait"   [style.background-image]=" 'url(' + uploadpath+'story/' +s.rstory_banner+ ')'">
+                    <img [src]="uploadpath+'story/' +s.rstory_banner" alt>
+                  </div>
+                  <div class="wrap-text">
+                    <h4>{{s.rstory_label}}</h4>
+                    <h3>{{s.rstory_title}}</h3>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 </ion-content>

@@ -2789,22 +2789,6 @@ input[type="button"].btn-block {
   }
 }
 
-.modal-open {
-  overflow: hidden
-}
-
-.modal {
-  display: none;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  -webkit-overflow-scrolling: touch;
-  outline: 0
-}
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
@@ -8810,7 +8794,7 @@ html.videoautoplay .text-n-img-slider-md .img-comp-wrapper.has_video video {
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
-body.show-top-story .top-story-md--content {
+.top-story-md--content.show {
   opacity: 1
 }
 
@@ -19108,20 +19092,6 @@ html:not(.modal-open) [ng-app="KitchenConfigurator"] #CookingHood .svg-wrapper {
   transition: opacity 0.5s 1.6s
 }
 
-.modal {
-  text-align: center;
-  overflow-y: scroll !important
-}
-
-.modal .modal-dialog {
-  text-align: left;
-  position: relative;
-  -webkit-transform: none !important;
-  -moz-transform: none !important;
-  -ms-transform: none !important;
-  -o-transform: none !important;
-  transform: none !important
-}
 
 .modal[size="md"] .modal-dialog {
   width: 450px
@@ -19131,10 +19101,6 @@ html:not(.modal-open) [ng-app="KitchenConfigurator"] #CookingHood .svg-wrapper {
   width: 750px
 }
 
-.modal .modal-content {
-  border-radius: 0;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3)
-}
 
 .modal.fade .modal-dialog {
   opacity: 0;
