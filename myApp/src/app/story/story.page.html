@@ -1,10 +1,17 @@
 <ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
   (ionScrollEnd)="logScrollEnd()">
-  <div class="fixtop" [style.opacity]="(scrolltop<=500)?(scrolltop*1.0/500):1">
-    <ion-toolbar>
-      <ion-title>Story</ion-title>
-    </ion-toolbar>
+  <div class="fixtop" [style.background-color]='"rgba(255,255,255,"+((scrolltop<=500)?(scrolltop*1.0/500):1)+")"'>
+    <div >
+      <div class="flex-row ">
+        <div class="padding" (click)='close()'>
+          <ion-icon [style.color]='"rgb("+(255-((scrolltop<=500)?(scrolltop*255.0/500):255))+","+(255-((scrolltop<=500)?(scrolltop*255.0/500):255))+","+(255-((scrolltop<=500)?(scrolltop*255.0/500):255))+")"' name="arrow-back" mode='ios' style="font-size:18px;"></ion-icon>
+        </div>
+        <div class="flex-1"></div>
+      </div>
+    </div>
   </div>
+  <div *ngIf='story!=null'>
+    
   <div class="top-story-md">
     <div class="top-story-md--image mobile" data-height="1706" data-width="1280" [style.background-image]=" 'url(' + uploadpath+'story/' +story.banner+ ')'">
       <img [src]="uploadpath+'story/' +story.banner" alt='cover'>
@@ -33,7 +40,7 @@
             <a (click)="gotoGoods(g.goods_id)">
               <div class="item in-view">
                 <div class="mo">
-                  <div class="super-img" nid [style.background-image]=" 'url(' + uploadpath+'goods/' +g.goods_cover+ ')'" >
+                  <div class="super-img" nid [style.background-image]=" 'url(' + uploadpath+'goods/' +g.goods_cover+ ')'">
                     <img [src]="uploadpath+'goods/' +g.goods_cover">
                   </div>
                 </div>
@@ -66,7 +73,7 @@
             <ul>
               <li class="item-text-on-img fade-onscroll in-view" *ngFor="let s of rstory">
                 <a (click)="refresh(s.rstory_id)">
-                  <div class="wrap-img wrap-img--portrait"   [style.background-image]=" 'url(' + uploadpath+'story/' +s.rstory_banner+ ')'">
+                  <div class="wrap-img wrap-img--portrait" [style.background-image]=" 'url(' + uploadpath+'story/' +s.rstory_banner+ ')'">
                     <img [src]="uploadpath+'story/' +s.rstory_banner" alt>
                   </div>
                   <div class="wrap-text">
@@ -83,4 +90,5 @@
 
     </div>
   </div>
+</div>
 </ion-content>

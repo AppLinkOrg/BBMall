@@ -2,3 +2,13 @@
 @import 'theme/custom.component.css';
 @import 'theme/custom.common.css';
 
+.flex-row{
+    display: flex;
+}
+.flex-1{
+    flex:1;
+}
+
+.padding{
+    padding:20px;
+}
