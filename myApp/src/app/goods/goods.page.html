@@ -1,0 +1,200 @@
+<ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
+  <div class="fixtop" [style.background-color]='"rgba(255,255,255,"+((scrolltop<=headerscroptshow)?(scrolltop*1.0/headerscroptshow):1)+")"'>
+    <div>
+      <div class="flex-row ">
+        <div class="padding" style="padding-right:0px;" (click)='close()'>
+          <ion-icon [style.color]='"rgb("+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+","+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+","+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+")"'
+            name="arrow-back" mode='ios' style="font-size:18px;"></ion-icon>
+        </div>
+        <div class="flex-1 text-center padding">
+          <div [class.hide]='scrolltop<headerscroptshow' style="font-size:18px;">{{title}}</div>
+        </div>
+        <div class="padding" style="padding-left:0px;">
+          <ion-icon name="arrow-back" mode='ios' style="font-size:18px;opacity:0"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="wrapper-main-content">
+    <div class="container-fluid ">
+
+
+
+      <ion-slides pager="false" style="height: 532px;">
+        <ion-slide *ngFor='let banner of bannerlist'>
+          <img [src]="uploadpath+'goods/'+banner.photo" style="width:100%;height:100%;" />
+        </ion-slide>
+      </ion-slides>
+      <div class="row wrapper-content wrapper-scroll">
+        <!-- Module E16 -->
+        <div class="col-xs-14 block">
+          <div class="row module-product-info" id="module-product-info">
+            <div class="col-xs-14 col-md-9">
+              <div class="wrapper-gallery" id="module-product-info__gallery" data-dom-changed="false">
+                <div class="indicator">
+                  <ul class="fixed">
+                    <li data-ind="1" class="active"><a data-ind="1"></a></li>
+                    <li data-ind="2"><a data-ind="2"></a></li>
+                    <li data-ind="3"><a data-ind="3"></a></li>
+                  </ul>
+                </div>
+                <!--<span class="btn-close-zoom"><i class="icon-close"></i></span>-->
+              </div>
+            </div>
+
+            <div class="col-xs-offset-1 col-xs-12 col-md-offset-0 col-md-5 product-info-wrapper">
+              <div>
+                <div class="product-info__flag">
+                  <div>
+                    <h4>&nbsp;</h4>
+                    <h4>{{goods.sno}}</h4>
+                    <h1>{{goods.name}}</h1>
+                    <div class="text">
+                      {{goods.summary}}
+                    </div>
+                    <p><a (click)='gotoDiv("product-detail")' class="underline">查看更多详情</a></p>
+                    <p class="price-box" id="price-product">{{goods.pricetxt}} <input type="hidden" name="dom-change"
+                        value="0" id="dom-changed">
+                      <span class="free-shipping" *ngIf='goods.shppingtxt!=""'>({{goods.shppingtxt}})</span></p>
+                    <div class="field field-name-field-product-variations field-type-commerce-product-reference field-label-above">
+                      <div class="field-label">Product variations:&nbsp;</div>
+                      <div class="field-items">
+                        <div class="field-item even">
+                          <form class="commerce-add-to-cart commerce-cart-add-to-cart-form-23-24" action="/en-us/products/pedal-bin-4-l-1-gal"
+                            method="post" id="commerce-cart-add-to-cart-form-23-24" accept-charset="UTF-8">
+                            <div>
+                              <div class="form-item form-type-textfield form-item-quantity">
+                                <label for="edit-quantity">数量 </label>
+                                <span class="commerce-quantity-plusminus-link commerce-quantity-plusminus-link-decrease minus commerce-quantity-plusminus-link-disabled"><a
+                                    class="button btn-change-quantity" data-increase="-1" (click)='minus()'>-</a></span><input
+                                  type="text" readonly="readonly" id="edit-quantity" name="quantity" value="{{num}}"
+                                  size="5" maxlength="128" class="form-text"><span class="commerce-quantity-plusminus-link commerce-quantity-plusminus-link-increase plus commerce-quantity-plusminus-link-disabled"><a
+                                    class="button btn-change-quantity" data-increase="1" (click)='add()'>+</a></span>
+                              </div>
+                              <div class="attribute-widgets">
+                                <div class="form-item form-type-select form-item-attributes-field-color">
+                                  <label for="edit-attributes-field-color" class="loaded" [class.open]='inattrselect'
+                                    (click)='inattrselect=!inattrselect;'>Color <span class="text"><span>{{goodsattr.name}}
+                                        - {{goodsattr.price}}{{InstInfo.current}}</span></span><span class="icon-arrow-down"></span></label>
+                                  <select id="edit-attributes-field-color" name="attributes[field_color]" class="form-select ajax-processed">
+                                    <option *ngFor='let item of goodsattrlist' value="{{item.id}}" selected="{{item.id==goodsattr.id?'selected':''}}">{{item.name}}
+                                      - {{item.price}}{{InstInfo.current}}</option>
+                                  </select>
+                                  <div class="detail-tool" [class.open]='inattrselect' data-select="edit-attributes-field-color">
+                                    <ul class="dropdown-list">
+                                      <li *ngFor='let item of goodsattrlist' [class.chosen]='item.id==goodsattr.id'
+                                        (click)='inattrselect=!inattrselect;goodsattr=item;'><span>{{item.name}} -
+                                          {{item.price}}{{InstInfo.current}}</span></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="edit-line-item-fields" class="form-wrapper"></div>
+                              <div id="add-to-cart"><input type="submit" id="edit-submit" name="op" value="Add to cart"
+                                  class="form-submit ajax-processed">
+                                <div class="ajax-added" (click)='addtocart(goods.id,goodsattr.id,num);num=1;'>加到购物车</div>
+                              </div><span class="limit-quantity-message" style="color:red;"></span>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Module E18 + E17 -->
+
+        <div [innerHtml]='goods.content'>
+
+        </div>
+
+        <!-- Module E20 -->
+        <div class="col-xs-14 module-product-detail zoom-expanded__hidden" id="product-detail">
+          <div class="row">
+            <div class="col-xs-12 col-xs-offset-1">
+              <h2>产品详情</h2>
+              <div [innerHtml]='goods.detail'>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Module E12 -->
+        <div class="col-xs-14 wrapper-content product-column product-four-column zoom-expanded__hidden">
+          <div class="row full">
+            <div class="col-sm-12 col-sm-offset-1 col-xs-14 product-column-title">
+              <h3> {{goods.goodsheader}}</h3>
+            </div>
+            <ul class="col-sm-12 col-xs-14 product-list">
+              <li class="col-md-6" *ngFor='let g of rgoodslist'>
+                <a (click)='gotoGoods(g.id)'>
+                  <div class="item  in-view">
+                    <div class="mo">
+                    </div>
+                    <div class="line">
+                      <span class="one-line">{{g.goods_name}}</span>
+                      <span class="price">{{g.goods_pricetxt}}</span>
+                    </div>
+                    <div class="container portrait loaded">
+                      <div class="img-wrapper" style="width: 167px; height: 167px; position: relative;">
+                          <img [src]="uploadpath+'goods/' +g.goods_cover">
+                      </div>
+                    </div>
+                    <div class="line">
+                      <p class="seriesnumber">{{g.goods_sno}}</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a  (click)='gotoGoodsCat(goods.cat_id)' class="view-more visible-xs">
+              查看相关商品分类                </a>
+          </div>
+        </div>
+      </div>
+      <div class="pulled-story container-fluid zoom-expanded__hidden" *ngIf='goods.story_id>0'>
+        <div class="row wrapper-fix">
+          <div class="col-md-14">
+            <div class="row full slide-to-top">
+              <div class="col-md-14">
+                <!-- Hero story -->
+                <div class="hero-story-container in-view" [style.background-image]=" 'url(' + uploadpath+'story/' +goods.story_banner+ ')'">
+                  <img [src]="uploadpath+'story/' +goods.story_banner" alt>
+
+
+                  <!--  <video autoplay muted playsinline loop>
+                      <source src="http://vipp.local/sites/default/files/landscape.mp4" type="video/mp4">
+                  </video>-->
+
+                  <div class="hero-story-description" fade-onscroll="" style="opacity: 1;">
+                    <div class="hero-story-description__wrapper">
+                      <h4>{{goods.story_label}}</h4>
+                      <h1>{{goods.story_title}}</h1>
+                      <a (click)='gotoStory(goods.story_id)' class="button white view-now">看看</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</ion-content>

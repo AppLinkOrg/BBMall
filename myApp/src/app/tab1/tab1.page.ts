@@ -5,6 +5,8 @@ import { NavController, ModalController, ToastController, AlertController } from
 import { ViewController } from '@ionic/core';
 import { GoodsApi } from 'src/providers/goods.api';
 import { StoryPage } from '../story/story.page';
+import { GoodsPage } from '../goods/goods.page';
+import { GoodscategoryPage } from '../goodscategory/goodscategory.page';
 
 @Component({
   selector: 'app-tab1',
@@ -63,9 +65,31 @@ export class Tab1Page extends AppBase {
       this.storylist = storylist;
     });
 
-
   }
-  gotoStory(id){
-    this.modal(StoryPage,{id:id});
+
+  onMyShow() {
+    //this.gotoGoods(1);
+  }
+
+  tryGoto(obj) {
+    console.log(obj);
+    if (obj.gototype == 'A') {
+      this.gotoGoods(obj.goods_id);
+    }
+    if (obj.gototype == 'B') {
+      this.gotoGoodsCategory(obj.goodscat_id);
+    }
+    if (obj.gototype == 'C') {
+      this.gotoStory(obj.story_id);
+    }
+  }
+  gotoStory(id) {
+    this.modal(StoryPage, { id: id });
+  }
+  gotoGoods(id) {
+    this.modal(GoodsPage, { id: id });
+  }
+  gotoGoodsCategory(id) {
+    this.modal(GoodscategoryPage, { id: id });
   }
 }

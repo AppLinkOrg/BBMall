@@ -1,0 +1,98 @@
+<ion-content [scrollEvents]="true" (ionScrollStart)="logScrollStart()" (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
+  <div class="fixtop" [style.background-color]='"rgba(255,255,255,"+((scrolltop<=headerscroptshow)?(scrolltop*1.0/headerscroptshow):1)+")"'>
+    <div>
+      <div class="flex-row ">
+        <div class="padding" style="padding-right:0px;" (click)='close()'>
+          <ion-icon [style.color]='"rgb("+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+","+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+","+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+")"'
+            name="arrow-back" mode='ios' style="font-size:18px;"></ion-icon>
+        </div>
+        <div class="flex-1 text-center padding">
+          <div [class.hide]='scrolltop<headerscroptshow' style="font-size:18px;">{{title}}</div>
+        </div>
+        <div class="padding" style="padding-left:0px;">
+          <ion-icon name="arrow-back" mode='ios' style="font-size:18px;opacity:0"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="bannerlist.length">
+    <ion-slides pager="false" style="height:75vw;">
+      <ion-slide *ngFor='let banner of bannerlist'>
+        <ion-img [src]="uploadpath+'goods/'+banner.photo" style="width:100%;height:100%;"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="wrapper-main-content">
+    <div class="container-fluid has-product-list">
+      <div class="row wrapper-content wrapper-scroll">
+
+
+
+        <div class="wrap-product-list col-md-12 col-md-offset-2">
+
+          <ul class="product-list row pattern-1" id="product-list">
+            <li class="col-md-6 portrait" *ngFor='let goods of goodslist;let i=index;'>
+              <div>
+                <div class="item">
+                  <div class="mo">
+                  </div>
+                  <div class="line">
+                    <span class="one-line">{{goods.name}}</span>
+                    <span class="price">{{goods.pricetxt}}</span>
+                  </div>
+                  <div class="container loaded">
+                    <div class="img-wrapper" *ngIf='i%7==0||i%7==1||i%7==2' style="width:90vw;height:90vw;position: relative;">
+                      <img [src]="uploadpath+'goods/' +goods.cover">
+                    </div>
+                    <div class="img-wrapper" *ngIf='i%7==3||i%7==4' style="width:45vw;height:45vw;position: relative;">
+                      <img [src]="uploadpath+'goods/' +goods.cover">
+                    </div>
+                    <div class="img-wrapper" *ngIf='i%7==5||i%7==6' style="width:65vw;height:65vw;position: relative;">
+                      <img [src]="uploadpath+'goods/' +goods.cover">
+                    </div>
+                  </div>
+                  <div class="line">
+                    <p class="seriesnumber">{{goods.sno}}</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="view-empty">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" *ngIf='cat.story_id>0'>
+    <div class="row fade-onscroll wrapper-fix in-view" style="opacity: 1;">
+      <div class="col-md-14">
+        <div class="row full slide-to-top">
+          <div class="col-md-14">
+            <!-- Hero story -->
+            <div class="hero-story-container in-view" [style.background-image]=" 'url(' + uploadpath+'story/' +cat.story_banner+ ')'">
+              <img [src]="uploadpath+'story/' +cat.story_banner" alt>
+
+
+              <!--  <video autoplay muted playsinline loop>
+                  <source src="http://vipp.local/sites/default/files/landscape.mp4" type="video/mp4">
+              </video>-->
+
+              <div class="hero-story-description" fade-onscroll="" style="opacity: 1;">
+                <div class="hero-story-description__wrapper">
+                  <h4>{{cat.story_label}}</h4>
+                  <h1>{{cat.story_title}}</h1>
+                  <a (click)='gotoStory(cat.story_id)' class="button white view-now">看看</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

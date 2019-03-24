@@ -10,10 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Http, HttpModule } from '@angular/http';
 import { StoryPage } from './story/story.page';
+import { GoodsPage } from './goods/goods.page';
+import { GoodscategoryPage } from './goodscategory/goodscategory.page';
 
 @NgModule({
-  declarations: [AppComponent,StoryPage],
-  entryComponents: [StoryPage],
+  declarations: [AppComponent,StoryPage,GoodsPage,GoodscategoryPage],
+  entryComponents: [StoryPage,GoodsPage,GoodscategoryPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpModule],
   providers: [
     StatusBar,

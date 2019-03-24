@@ -1,7 +1,13 @@
 // http://ionicframework.com/docs/theming/
 @import 'theme/custom.component.css';
 @import 'theme/custom.common.css';
-
+.fixtop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    z-index: 3;
+}
 .flex-row{
     display: flex;
 }
@@ -11,4 +17,8 @@
 
 .padding{
     padding:20px;
+}
+
+.text-center{
+    text-align: center;
 }

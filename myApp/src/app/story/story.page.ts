@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { NavController, ModalController, ToastController, AlertController, NavParams } from '@ionic/angular';
 import { GoodsApi } from 'src/providers/goods.api';
 import { AppUtil } from '../app.util';
+import { GoodsPage } from '../goods/goods.page';
+import { GoodscategoryPage } from '../goodscategory/goodscategory.page';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-story',
@@ -18,21 +21,24 @@ export class StoryPage extends AppBase {
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public goodsApi: GoodsApi,
-    public navParams:NavParams) {
+    public navParams:NavParams,
+    private sanitizer: DomSanitizer) {
     super(router, navCtrl, modalCtrl, toastCtrl, alertCtrl);
+    this.headerscroptshow=500;
   }
 
   story = null;
   goods = [];
   rstory = [];
   showcov=false;
-  scrolltop=0;
 
   onMyLoad(){
     var id=this.navParams.get("id");
     this.goodsApi.story({id:id}).then((story)=>{
       
       story.content = AppUtil.HtmlDecode(story.content);
+      story.content = this.sanitizer.bypassSecurityTrustHtml(story.content);
+
       this.story=story;
       this.goodsApi.storygoods({story_id:id}).then((goods)=>{
         this.goods=goods;
@@ -44,18 +50,18 @@ export class StoryPage extends AppBase {
         this.showcov=true;
       },2000);
     });
+  }
+
+  
 
 
-    
+  gotoStory(id) {
+      this.modal(StoryPage, { id: id });
   }
-  logScrollStart(){
-    console.log("logScrollStart");
+  gotoGoods(id) {
+      this.modal(GoodsPage, { id: id });
   }
-  logScrolling(e){
-    console.log(e);
-    this.scrolltop=e.detail.scrollTop;
-  }
-  logScrollEnd(){
-    console.log("logScrollEnd");
+  gotoGoodsCategory(id) {
+      this.modal(GoodscategoryPage , { id: id });
   }
 }

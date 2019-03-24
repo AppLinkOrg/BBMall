@@ -1,5 +1,5 @@
-import { SQLite } from '@ionic-native/sqlite';
-import { HTTP } from '@ionic-native/http';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { HTTP } from '@ionic-native/http/ngx';
 
 export class DBMgr {
     private _db: any;

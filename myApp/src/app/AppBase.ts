@@ -11,7 +11,7 @@ import { ViewController } from '@ionic/core';
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 
-export class AppBase  implements OnInit {
+export class AppBase implements OnInit {
     public needlogin = false;
 
     public static myapp: AppComponent = null;
@@ -31,6 +31,8 @@ export class AppBase  implements OnInit {
     public options = null;
 
     public firseonshow = true;
+    public scrolltop = 0;
+    public headerscroptshow = 0;
 
 
     public constructor(
@@ -45,8 +47,8 @@ export class AppBase  implements OnInit {
     setStatusBar() {
         //  this.statusBar.styleLightContent();
     }
-    ngOnInit(){
-        
+    ngOnInit() {
+
         ApiConfig.SetUnicode(AppBase.UNICODE);
         this.getResources();
         this.getInstInfo();
@@ -251,5 +253,20 @@ export class AppBase  implements OnInit {
         } else {
             return this.uploadpath + "member/" + photo;
         }
+    }
+
+    logScrollStart() {
+        console.log("logScrollStart");
+    }
+    logScrolling(e) {
+        console.log(e);
+        this.scrolltop = e.detail.scrollTop;
+    }
+    logScrollEnd() {
+        console.log("logScrollEnd");
+    }
+    gotoDiv(id){
+        var target = document.querySelector('#'+id );
+        target.scrollIntoView();
     }
 }
