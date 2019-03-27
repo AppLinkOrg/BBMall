@@ -10,8 +10,11 @@
         <div class="flex-1 text-center padding">
           <div [class.hide]='scrolltop<headerscroptshow' style="font-size:18px;">{{title}}</div>
         </div>
-        <div class="padding" style="padding-left:0px;">
-          <ion-icon name="arrow-back" mode='ios' style="font-size:18px;opacity:0"></ion-icon>
+        <div class="padding flex-row flex-center" style="padding-left:0px;" (click)="windowslocation('/tabs/tab2')">
+          <ion-icon  
+          [style.color]='"rgb("+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+","+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+","+(255-((scrolltop<=headerscroptshow)?(scrolltop*255.0/headerscroptshow):255))+")"'
+          name="cart" mode='ios' style="font-size:18px;"></ion-icon>
+          &nbsp;{{cart.length>0?cart.length:""}}
         </div>
       </div>
     </div>
@@ -37,8 +40,8 @@
               <div class="wrapper-gallery" id="module-product-info__gallery" data-dom-changed="false">
                 <div class="indicator">
                   <ul class="fixed">
-                    <li  *ngFor='let banner of bannerlist;let i=index;'  [class.active]='i==pindex' >
-                      <a ></a>
+                    <li *ngFor='let banner of bannerlist;let i=index;' [class.active]='i==pindex'>
+                      <a></a>
                     </li>
                   </ul>
                 </div>
@@ -94,9 +97,9 @@
                                 </div>
                               </div>
                               <div id="edit-line-item-fields" class="form-wrapper"></div>
-                              <div id="add-to-cart"><input type="submit" id="edit-submit" name="op" value="Add to cart"
-                                  class="form-submit ajax-processed">
-                                <div class="ajax-added" (click)='addtocart(goods.id,goodsattr.id,num);num=1;'>加到购物车</div>
+                              <div id="add-to-cart"><input readonly id="edit-submit" name="op" value="加到购物车"
+                                  class="form-submit ajax-processed" (click)='addtocart(goods,goodsattr,num);num=1;' />
+                               
                               </div><span class="limit-quantity-message" style="color:red;"></span>
                             </div>
                           </form>
@@ -126,7 +129,7 @@
               <div [innerHtml]='goods.detail'>
 
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -149,7 +152,7 @@
                     </div>
                     <div class="container portrait loaded">
                       <div class="img-wrapper" style="width: 167px; height: 167px; position: relative;">
-                          <img [src]="uploadpath+'goods/' +g.goods_cover">
+                        <img [src]="uploadpath+'goods/' +g.goods_cover">
                       </div>
                     </div>
                     <div class="line">
@@ -159,8 +162,8 @@
                 </a>
               </li>
             </ul>
-            <a  (click)='gotoGoodsCat(goods.cat_id)' class="view-more visible-xs">
-              查看相关商品分类                </a>
+            <a (click)='gotoGoodsCat(goods.cat_id)' class="view-more visible-xs">
+              查看相关商品分类 </a>
           </div>
         </div>
       </div>

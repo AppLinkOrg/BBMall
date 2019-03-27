@@ -41,7 +41,7 @@ export class GoodsPage extends AppBase {
   onMyLoad() {
     var id = this.navParams.get("id");
     this.goodsApi.goods({ id: id }).then((goods) => {
-
+      
       goods.content = AppUtil.HtmlDecode(goods.content);
       goods.content = this.sanitizer.bypassSecurityTrustHtml(goods.content);
 
@@ -63,7 +63,7 @@ export class GoodsPage extends AppBase {
       this.goodsattrlist=goodsattrlist;
     });
 
-    this.goodsApi.goodsgoods({origoods_id:id}).then((rgoodslist)=>{
+    this.goodsApi.goodsgoods({orggoods_id:id}).then((rgoodslist)=>{
       
       this.rgoodslist=rgoodslist;
     });
@@ -86,7 +86,6 @@ export class GoodsPage extends AppBase {
     });
   }
   gotoStory(id) {
-    console.log(this.modal);
     this.showModal(StoryPage, { id: id });
   }
   gotoGoods(id) {

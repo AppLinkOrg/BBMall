@@ -34,6 +34,8 @@ export class AppBase implements OnInit {
     public scrolltop = 0;
     public headerscroptshow = 0;
 
+    static Cart = [];
+    cart = [];
 
     public constructor(
         public router: Router,
@@ -91,6 +93,8 @@ export class AppBase implements OnInit {
     ionViewDidEnter() {
         var token = window.localStorage.getItem("token");
         //alert(token);
+        this.cart=AppBase.Cart;
+
         if (token == null) {
             if (this.needlogin == true) {
                 this.showModal("LoginPage", {});
@@ -145,6 +149,9 @@ export class AppBase implements OnInit {
     }
     returnData(data) {
         this.modalCtrl.dismiss(data);
+    }
+    windowslocation(url){
+        window.location.href=url;
     }
     nagivate(pagename, param = {}) {
         this.router.navigate([pagename], { queryParams: param })
@@ -265,8 +272,26 @@ export class AppBase implements OnInit {
     logScrollEnd() {
         console.log("logScrollEnd");
     }
-    gotoDiv(id){
-        var target = document.querySelector('#'+id );
+    gotoDiv(id) {
+        var target = document.querySelector('#' + id);
         target.scrollIntoView();
+    }
+    addtocart(goods, goodsattr, num) {
+        var cart = AppBase.Cart;
+        var addtocartnow = false;
+        for (var i = 0; i < cart.length; i++) {
+            if (goods.id == cart[i].goods.id
+                && goodsattr.id == cart[i].goodsattr.id) {
+                cart[i].num = cart[i].num + num;
+                addtocartnow = true;
+                break;
+            }
+        }
+        if(addtocartnow==false){
+            cart.push({goods:goods,goodsattr:goodsattr,num});
+        }
+        AppBase.Cart=cart;
+        window.localStorage.setItem("cartstore",JSON.stringify(cart));
+        this.cart=cart;
     }
 }

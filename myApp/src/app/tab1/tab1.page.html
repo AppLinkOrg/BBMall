@@ -6,9 +6,9 @@
           <img class="logo logo-black" src="{{uploadpath}}inst/{{InstInfo.logo}}" alt="Home">
         </a>
         <div class="right" fade-onload style="opacity: 1;">
-          <a to="/cart">
+          <a (click)="nagivate('/tabs/tab2')">
             <img class="basket-icn basket-icn--black" src="{{uploadpath}}resource/{{res.basket}}" alt="basket">
-            <span id="number-item-in-cart"></span>
+            <span id="number-item-in-cart">&nbsp;{{cart.length>0?cart.length:""}}</span>
           </a>
           <a class="btn-menu-burger">
             <img class="icon-menu icon-menu--black" src="{{uploadpath}}resource/{{res.menu}}" alt="menu">

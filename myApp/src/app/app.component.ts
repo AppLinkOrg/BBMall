@@ -22,11 +22,16 @@ export class AppComponent {
   ) {
     AppBase.instapi=instApi;
     AppBase.memberapi=memberApi;
+    var cartjson=window.localStorage.getItem("cartstore");
+    if(cartjson!=null){
+      AppBase.Cart=JSON.parse(cartjson);
+    }
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
