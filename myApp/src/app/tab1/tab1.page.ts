@@ -84,12 +84,12 @@ export class Tab1Page extends AppBase {
     }
   }
   gotoStory(id) {
-    this.modal(StoryPage, { id: id });
+    this.showModal(StoryPage, { id: id });
   }
   gotoGoods(id) {
-    this.modal(GoodsPage, { id: id });
+    this.showModal(GoodsPage, { id: id });
   }
   gotoGoodsCategory(id) {
-    this.modal(GoodscategoryPage, { id: id });
+    this.showModal(GoodscategoryPage, { id: id });
   }
 }

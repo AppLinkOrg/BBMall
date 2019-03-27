@@ -3,6 +3,8 @@ import { AppBase } from '../AppBase';
 import { Router } from '@angular/router';
 import { NavController, ModalController, ToastController, AlertController, NavParams } from '@ionic/angular';
 import { GoodsApi } from 'src/providers/goods.api';
+import { StoryPage } from '../story/story.page';
+import { GoodsPage } from '../goods/goods.page';
 
 @Component({
   selector: 'app-goodscategory',
@@ -39,4 +41,13 @@ export class GoodscategoryPage extends AppBase {
     });
   }
 
+  gotoStory(id) {
+    this.showModal(StoryPage, { id: id });
+  }
+  gotoGoods(id) {
+    this.showModal(GoodsPage, { id: id });
+  }
+  gotoGoodsCategory(id) {
+    this.showModal(GoodscategoryPage, { id: id });
+  }
 }

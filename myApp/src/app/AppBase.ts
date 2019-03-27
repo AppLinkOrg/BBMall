@@ -93,7 +93,7 @@ export class AppBase implements OnInit {
         //alert(token);
         if (token == null) {
             if (this.needlogin == true) {
-                this.modal("LoginPage", {});
+                this.showModal("LoginPage", {});
             } else {
 
                 this.onMyShow();
@@ -105,7 +105,7 @@ export class AppBase implements OnInit {
 
                     memberinfo = null;
                     if (this.needlogin == true) {
-                        this.modal("LoginPage", {});
+                        this.showModal("LoginPage", {});
                         return;
                     }
                 }
@@ -149,7 +149,7 @@ export class AppBase implements OnInit {
     nagivate(pagename, param = {}) {
         this.router.navigate([pagename], { queryParams: param })
     }
-    async modal(pageobj, param = {}, callback = null) {
+    async showModal(pageobj, param = {}, callback = null) {
         var modal = await this.modalCtrl.create({
             component: pageobj,
             componentProps: param
@@ -158,7 +158,7 @@ export class AppBase implements OnInit {
     }
 
     content(title, key) {
-        this.modal("ContentPage", { title, key });
+        this.showModal("ContentPage", { title, key });
     }
 
     decode(val) {
@@ -185,7 +185,7 @@ export class AppBase implements OnInit {
         });
         toast.present();
     }
-    async alert(msg) {
+    async showAlert(msg) {
 
         const alert = await this.alertCtrl.create({
             header: "提示",

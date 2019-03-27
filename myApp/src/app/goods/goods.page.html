@@ -24,7 +24,7 @@
 
 
 
-      <ion-slides pager="false" style="height: 532px;">
+      <ion-slides pager="false" style="height: 532px;" #slides (ionSlideDidChange)="slideChanged()">
         <ion-slide *ngFor='let banner of bannerlist'>
           <img [src]="uploadpath+'goods/'+banner.photo" style="width:100%;height:100%;" />
         </ion-slide>
@@ -37,9 +37,9 @@
               <div class="wrapper-gallery" id="module-product-info__gallery" data-dom-changed="false">
                 <div class="indicator">
                   <ul class="fixed">
-                    <li data-ind="1" class="active"><a data-ind="1"></a></li>
-                    <li data-ind="2"><a data-ind="2"></a></li>
-                    <li data-ind="3"><a data-ind="3"></a></li>
+                    <li  *ngFor='let banner of bannerlist;let i=index;'  [class.active]='i==pindex' >
+                      <a ></a>
+                    </li>
                   </ul>
                 </div>
                 <!--<span class="btn-close-zoom"><i class="icon-close"></i></span>-->

@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AppBase } from '../AppBase';
 import { Router } from '@angular/router';
-import { NavController, ModalController, ToastController, AlertController, NavParams } from '@ionic/angular';
+import { NavController, ModalController, ToastController, AlertController, NavParams,IonSlides } from '@ionic/angular';
 import { GoodsApi } from 'src/providers/goods.api';
 import { AppUtil } from '../app.util';
 import { DomSanitizer } from '@angular/platform-browser';
+import { StoryPage } from '../story/story.page';
+import { GoodscategoryPage } from '../goodscategory/goodscategory.page';
 
 @Component({
   selector: 'app-goods',
@@ -13,6 +15,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   providers: [GoodsApi]
 })
 export class GoodsPage extends AppBase {
+  @ViewChild(IonSlides) slides: IonSlides;
+
   constructor(public router: Router,
     public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -74,5 +78,21 @@ export class GoodsPage extends AppBase {
     if(this.num<1){
       this.num=1;
     }
+  }
+  pindex=0;
+  slideChanged(){
+    this.slides.getActiveIndex().then((pindex)=>{
+      this.pindex=pindex;
+    });
+  }
+  gotoStory(id) {
+    console.log(this.modal);
+    this.showModal(StoryPage, { id: id });
+  }
+  gotoGoods(id) {
+    this.showModal(GoodsPage, { id: id });
+  }
+  gotoGoodsCategory(id) {
+    this.showModal(GoodscategoryPage, { id: id });
   }
 }
