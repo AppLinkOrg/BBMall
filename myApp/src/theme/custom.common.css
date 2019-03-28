@@ -3918,9 +3918,9 @@ input[type=radio].custom:checked~.fake-input:before {
   overflow: hidden
 }
 
-body.front-page .wrapper-main-content>div,
-body.page-stories .wrapper-main-content>div,
-:not(.kitchen-tool) body.kitchen-page .wrapper-main-content>div {
+front-page .wrapper-main-content>div,
+page-stories .wrapper-main-content>div,
+:not(.kitchen-tool) kitchen-page .wrapper-main-content>div {
   overflow: hidden;
   -webkit-transform: none;
   -moz-transform: none;
@@ -3932,9 +3932,9 @@ body.page-stories .wrapper-main-content>div,
   transition: transform 0.5s
 }
 
-body.front-page .wrapper-main-content.load-footer>div,
-body.page-stories .wrapper-main-content.load-footer>div,
-:not(.kitchen-tool) body.kitchen-page .wrapper-main-content.load-footer>div {
+front-page .wrapper-main-content.load-footer>div,
+page-stories .wrapper-main-content.load-footer>div,
+:not(.kitchen-tool) kitchen-page .wrapper-main-content.load-footer>div {
   -webkit-transform: translateY(-60px);
   -moz-transform: translateY(-60px);
   -ms-transform: translateY(-60px);
@@ -3944,9 +3944,9 @@ body.page-stories .wrapper-main-content.load-footer>div,
 
 @media (max-width:1023px) {
 
-  body.front-page .wrapper-main-content.load-footer>div,
-  body.page-stories .wrapper-main-content.load-footer>div,
-  :not(.kitchen-tool) body.kitchen-page .wrapper-main-content.load-footer>div {
+  front-page .wrapper-main-content.load-footer>div,
+  page-stories .wrapper-main-content.load-footer>div,
+  :not(.kitchen-tool) kitchen-page .wrapper-main-content.load-footer>div {
     -webkit-transform: translateY(-253px);
     -moz-transform: translateY(-253px);
     -ms-transform: translateY(-253px);
@@ -3956,7 +3956,7 @@ body.page-stories .wrapper-main-content.load-footer>div,
 }
 
 @media (min-width:1024px) {
-  body.product-page .wrapper-main-content {
+  product-page .wrapper-main-content {
     width: 100%
   }
 }
@@ -4100,7 +4100,7 @@ body.page-stories .wrapper-main-content.load-footer>div,
   }
 }
 
-body.story-page .footer {
+story-page .footer {
   opacity: 1 !important;
   position: relative !important;
   bottom: auto;
@@ -4116,10 +4116,10 @@ body.story-page .footer {
 
 @media (min-width:1024px) {
 
-  body.pages.has-wrapper-fix .footer,
-  body.product-list-page.has-wrapper-fix .footer,
-  body.category-list-page.has-wrapper-fix .footer,
-  body.product-page.has-wrapper-fix .footer {
+  pages.has-wrapper-fix .footer,
+  product-list-page.has-wrapper-fix .footer,
+  category-list-page.has-wrapper-fix .footer,
+  product-page.has-wrapper-fix .footer {
     position: fixed;
     width: 100%;
     top: 100%;
@@ -4128,10 +4128,10 @@ body.story-page .footer {
     transition: transform 0.5s
   }
 
-  body.pages.has-wrapper-fix .wrapper-main-content,
-  body.product-list-page.has-wrapper-fix .wrapper-main-content,
-  body.category-list-page.has-wrapper-fix .wrapper-main-content,
-  body.product-page.has-wrapper-fix .wrapper-main-content {
+  pages.has-wrapper-fix .wrapper-main-content,
+  product-list-page.has-wrapper-fix .wrapper-main-content,
+  category-list-page.has-wrapper-fix .wrapper-main-content,
+  product-page.has-wrapper-fix .wrapper-main-content {
     position: relative;
     z-index: 10;
     -webkit-transition: transform 0.5s;
@@ -4139,10 +4139,10 @@ body.story-page .footer {
     transition: transform 0.5s
   }
 
-  body.pages.has-wrapper-fix.load-footer .wrapper-main-content,
-  body.product-list-page.has-wrapper-fix.load-footer .wrapper-main-content,
-  body.category-list-page.has-wrapper-fix.load-footer .wrapper-main-content,
-  body.product-page.has-wrapper-fix.load-footer .wrapper-main-content {
+  pages.has-wrapper-fix.load-footer .wrapper-main-content,
+  product-list-page.has-wrapper-fix.load-footer .wrapper-main-content,
+  category-list-page.has-wrapper-fix.load-footer .wrapper-main-content,
+  product-page.has-wrapper-fix.load-footer .wrapper-main-content {
     -webkit-transform: translateY(-60px) translateZ(0);
     -moz-transform: translateY(-60px) translateZ(0);
     -ms-transform: translateY(-60px) translateZ(0);
@@ -4150,10 +4150,10 @@ body.story-page .footer {
     transform: translateY(-60px) translateZ(0)
   }
 
-  body.pages.has-wrapper-fix.load-footer .wrapper-fix,
-  body.product-list-page.has-wrapper-fix.load-footer .wrapper-fix,
-  body.category-list-page.has-wrapper-fix.load-footer .wrapper-fix,
-  body.product-page.has-wrapper-fix.load-footer .wrapper-fix {
+  pages.has-wrapper-fix.load-footer .wrapper-fix,
+  product-list-page.has-wrapper-fix.load-footer .wrapper-fix,
+  category-list-page.has-wrapper-fix.load-footer .wrapper-fix,
+  product-page.has-wrapper-fix.load-footer .wrapper-fix {
     -webkit-transform: translateY(-60px);
     -moz-transform: translateY(-60px);
     -ms-transform: translateY(-60px);
@@ -4161,10 +4161,10 @@ body.story-page .footer {
     transform: translateY(-60px)
   }
 
-  body.pages.has-wrapper-fix.load-footer .footer,
-  body.product-list-page.has-wrapper-fix.load-footer .footer,
-  body.category-list-page.has-wrapper-fix.load-footer .footer,
-  body.product-page.has-wrapper-fix.load-footer .footer {
+  pages.has-wrapper-fix.load-footer .footer,
+  product-list-page.has-wrapper-fix.load-footer .footer,
+  category-list-page.has-wrapper-fix.load-footer .footer,
+  product-page.has-wrapper-fix.load-footer .footer {
     -webkit-transform: translateY(-60px);
     -moz-transform: translateY(-60px);
     -ms-transform: translateY(-60px);
@@ -4173,28 +4173,28 @@ body.story-page .footer {
   }
 }
 
-body.story-page .footer {
+story-page .footer {
   visibility: hidden
 }
 
-body.story-page.show-top-story .footer {
+story-page.show-top-story .footer {
   visibility: visible
 }
 
-body.story-page.scroll-to-bottom {
+story-page.scroll-to-bottom {
   height: 100% !important
 }
 
-body.story-page.scroll-to-bottom .wrapper-main-content {
+story-page.scroll-to-bottom .wrapper-main-content {
   position: static !important;
   overflow-x: initial !important
 }
 
-body.story-page.scroll-to-bottom .footer {
+story-page.scroll-to-bottom .footer {
   visibility: visible
 }
 
-body.page-checkout-complete .wrapper-fix {
+page-checkout-complete .wrapper-fix {
   position: relative
 }
 
@@ -4271,12 +4271,12 @@ select:-webkit-autofill {
   }
 }
 
-body.has-cookie .wrapper-main-content {
+has-cookie .wrapper-main-content {
   min-height: calc(100% - 354px)
 }
 
 @media (min-width:1024px) {
-  body.has-cookie .wrapper-main-content {
+  has-cookie .wrapper-main-content {
     min-height: calc(100% - 130px)
   }
 }
@@ -4486,11 +4486,11 @@ body.has-cookie .wrapper-main-content {
   text-decoration: none
 }
 
-body.on-page-second-menu .top-wrapper .top.extra .right a {
+on-page-second-menu .top-wrapper .top.extra .right a {
   color: #a0a0a0
 }
 
-body.on-page-second-menu .top-wrapper .top.extra .right a.active {
+on-page-second-menu .top-wrapper .top.extra .right a.active {
   color: #282828
 }
 
@@ -4511,11 +4511,11 @@ body.on-page-second-menu .top-wrapper .top.extra .right a.active {
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
-body.front-page .top.resized,
-body.product-page .top,
-body.story-page .top,
-body.page-cart .top,
-body.page-checkout-complete .top body.page-user .top {
+front-page .top.resized,
+product-page .top,
+story-page .top,
+page-cart .top,
+page-checkout-complete .top page-user .top {
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.03)
 }
 
@@ -4537,197 +4537,197 @@ body.page-checkout-complete .top body.page-user .top {
   top: 0
 }
 
-body.story-page .top-wrapper .top,
-body.node-type-hotel .top-wrapper .top {
+story-page .top-wrapper .top,
+node-type-hotel .top-wrapper .top {
   background: transparent;
   position: fixed
 }
 
-body.story-page .top-wrapper .top.primary,
-body.node-type-hotel .top-wrapper .top.primary {
+story-page .top-wrapper .top.primary,
+node-type-hotel .top-wrapper .top.primary {
   opacity: 0
 }
 
-body.story-page .top-wrapper .top.primary .wrap,
-body.node-type-hotel .top-wrapper .top.primary .wrap {
+story-page .top-wrapper .top.primary .wrap,
+node-type-hotel .top-wrapper .top.primary .wrap {
   position: relative
 }
 
-body.story-page .top-wrapper .top.primary a span,
-body.node-type-hotel .top-wrapper .top.primary a span {
+story-page .top-wrapper .top.primary a span,
+node-type-hotel .top-wrapper .top.primary a span {
   color: #FFF !important
 }
 
-body.story-page .top-wrapper .top.primary a,
-body.story-page .top-wrapper .top.primary a:hover,
-body.story-page .top-wrapper .top.primary span,
-body.node-type-hotel .top-wrapper .top.primary a,
-body.node-type-hotel .top-wrapper .top.primary a:hover,
-body.node-type-hotel .top-wrapper .top.primary span {
+story-page .top-wrapper .top.primary a,
+story-page .top-wrapper .top.primary a:hover,
+story-page .top-wrapper .top.primary span,
+node-type-hotel .top-wrapper .top.primary a,
+node-type-hotel .top-wrapper .top.primary a:hover,
+node-type-hotel .top-wrapper .top.primary span {
   color: #FFF
 }
 
-body.story-page .top-wrapper .top.extra,
-body.node-type-hotel .top-wrapper .top.extra {
+story-page .top-wrapper .top.extra,
+node-type-hotel .top-wrapper .top.extra {
   background: #ffffff
 }
 
-body.story-page .top-wrapper .top .logo-black,
-body.node-type-hotel .top-wrapper .top .logo-black {
+story-page .top-wrapper .top .logo-black,
+node-type-hotel .top-wrapper .top .logo-black {
   display: none
 }
 
-body.story-page .top-wrapper .top .logo-white,
-body.node-type-hotel .top-wrapper .top .logo-white {
+story-page .top-wrapper .top .logo-white,
+node-type-hotel .top-wrapper .top .logo-white {
   display: inline-block
 }
 
-body.story-page .top-wrapper .top .basket-icn--black,
-body.story-page .top-wrapper .top .icon-menu--black,
-body.node-type-hotel .top-wrapper .top .basket-icn--black,
-body.node-type-hotel .top-wrapper .top .icon-menu--black {
+story-page .top-wrapper .top .basket-icn--black,
+story-page .top-wrapper .top .icon-menu--black,
+node-type-hotel .top-wrapper .top .basket-icn--black,
+node-type-hotel .top-wrapper .top .icon-menu--black {
   display: none
 }
 
-body.story-page .top-wrapper .top .basket-icn--white,
-body.story-page .top-wrapper .top .icon-menu--white,
-body.node-type-hotel .top-wrapper .top .basket-icn--white,
-body.node-type-hotel .top-wrapper .top .icon-menu--white {
+story-page .top-wrapper .top .basket-icn--white,
+story-page .top-wrapper .top .icon-menu--white,
+node-type-hotel .top-wrapper .top .basket-icn--white,
+node-type-hotel .top-wrapper .top .icon-menu--white {
   display: inline
 }
 
-html.resized body.story-page .top-wrapper .top.primary,
-html.resized body.node-type-hotel .top-wrapper .top.primary {
+html.resized story-page .top-wrapper .top.primary,
+html.resized node-type-hotel .top-wrapper .top.primary {
   background: #ffffff
 }
 
-html.resized body.story-page .top-wrapper .top.primary .logo-black,
-html.resized body.node-type-hotel .top-wrapper .top.primary .logo-black {
+html.resized story-page .top-wrapper .top.primary .logo-black,
+html.resized node-type-hotel .top-wrapper .top.primary .logo-black {
   display: inline
 }
 
-html.resized body.story-page .top-wrapper .top.primary .logo-white,
-html.resized body.node-type-hotel .top-wrapper .top.primary .logo-white {
+html.resized story-page .top-wrapper .top.primary .logo-white,
+html.resized node-type-hotel .top-wrapper .top.primary .logo-white {
   display: none
 }
 
-html.resized body.story-page .top-wrapper .top.primary a,
-html.resized body.story-page .top-wrapper .top.primary a:hover,
-html.resized body.story-page .top-wrapper .top.primary span,
-html.resized body.node-type-hotel .top-wrapper .top.primary a,
-html.resized body.node-type-hotel .top-wrapper .top.primary a:hover,
-html.resized body.node-type-hotel .top-wrapper .top.primary span {
+html.resized story-page .top-wrapper .top.primary a,
+html.resized story-page .top-wrapper .top.primary a:hover,
+html.resized story-page .top-wrapper .top.primary span,
+html.resized node-type-hotel .top-wrapper .top.primary a,
+html.resized node-type-hotel .top-wrapper .top.primary a:hover,
+html.resized node-type-hotel .top-wrapper .top.primary span {
   color: #282828 !important
 }
 
-html.resized body.story-page .top-wrapper .top.primary .basket-icn--black,
-html.resized body.story-page .top-wrapper .top.primary .icon-menu--black,
-html.resized body.node-type-hotel .top-wrapper .top.primary .basket-icn--black,
-html.resized body.node-type-hotel .top-wrapper .top.primary .icon-menu--black {
+html.resized story-page .top-wrapper .top.primary .basket-icn--black,
+html.resized story-page .top-wrapper .top.primary .icon-menu--black,
+html.resized node-type-hotel .top-wrapper .top.primary .basket-icn--black,
+html.resized node-type-hotel .top-wrapper .top.primary .icon-menu--black {
   display: inline-block
 }
 
-html.resized body.story-page .top-wrapper .top.primary .basket-icn--white,
-html.resized body.story-page .top-wrapper .top.primary .icon-menu--white,
-html.resized body.node-type-hotel .top-wrapper .top.primary .basket-icn--white,
-html.resized body.node-type-hotel .top-wrapper .top.primary .icon-menu--white {
+html.resized story-page .top-wrapper .top.primary .basket-icn--white,
+html.resized story-page .top-wrapper .top.primary .icon-menu--white,
+html.resized node-type-hotel .top-wrapper .top.primary .basket-icn--white,
+html.resized node-type-hotel .top-wrapper .top.primary .icon-menu--white {
   display: none
 }
 
-body.story-page.show-top-story .top-wrapper .top.primary,
-body.node-type-hotel.show-top-story .top-wrapper .top.primary {
+story-page.show-top-story .top-wrapper .top.primary,
+node-type-hotel.show-top-story .top-wrapper .top.primary {
   opacity: 1
 }
 
-body.story-page .top-wrapper .top .right a.text-item:nth-child(1),
-body.story-page .top-wrapper .top .right a.text-item:nth-child(3) {
+story-page .top-wrapper .top .right a.text-item:nth-child(1),
+story-page .top-wrapper .top .right a.text-item:nth-child(3) {
   color: #a0a0a0
 }
 
-body.story-page .top-wrapper .top .right a.text-item:nth-child(1).active,
-body.story-page .top-wrapper .top .right a.text-item:nth-child(1):hover,
-body.story-page .top-wrapper .top .right a.text-item:nth-child(1):focus,
-body.story-page .top-wrapper .top .right a.text-item:nth-child(3).active,
-body.story-page .top-wrapper .top .right a.text-item:nth-child(3):hover,
-body.story-page .top-wrapper .top .right a.text-item:nth-child(3):focus {
+story-page .top-wrapper .top .right a.text-item:nth-child(1).active,
+story-page .top-wrapper .top .right a.text-item:nth-child(1):hover,
+story-page .top-wrapper .top .right a.text-item:nth-child(1):focus,
+story-page .top-wrapper .top .right a.text-item:nth-child(3).active,
+story-page .top-wrapper .top .right a.text-item:nth-child(3):hover,
+story-page .top-wrapper .top .right a.text-item:nth-child(3):focus {
   color: #fff
 }
 
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(1),
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(3) {
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(1),
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(3) {
   color: #a0a0a0 !important
 }
 
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(1).active,
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(1):hover,
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(1):focus,
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(3).active,
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(3):hover,
-html.resized body.story-page .top-wrapper .top .right a.text-item:nth-child(3):focus {
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(1).active,
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(1):hover,
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(1):focus,
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(3).active,
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(3):hover,
+html.resized story-page .top-wrapper .top .right a.text-item:nth-child(3):focus {
   color: #282828 !important
 }
 
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1),
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2) {
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1),
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2) {
   color: #a0a0a0
 }
 
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1).active,
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):hover,
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):focus,
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2).active,
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):hover,
-body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):focus {
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1).active,
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):hover,
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):focus,
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2).active,
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):hover,
+node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):focus {
   color: #fff
 }
 
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1),
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2) {
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1),
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2) {
   color: #a0a0a0 !important
 }
 
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1).active,
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):hover,
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):focus,
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2).active,
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):hover,
-html.resized body.node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):focus {
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1).active,
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):hover,
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(1):focus,
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2).active,
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):hover,
+html.resized node-type-hotel .top-wrapper .top .right a.text-item:nth-child(2):focus {
   color: #282828 !important
 }
 
-body.product-list-page .top-wrapper .top.primary .right a,
-body.page-stories .top-wrapper .top.primary .right a,
-body.node-type-hotel-list-page .top-wrapper .top.primary .right a {
+product-list-page .top-wrapper .top.primary .right a,
+page-stories .top-wrapper .top.primary .right a,
+node-type-hotel-list-page .top-wrapper .top.primary .right a {
   color: #a0a0a0
 }
 
-body.product-list-page .top-wrapper .top.primary .right a.active,
-body.product-list-page .top-wrapper .top.primary .right a:hover,
-body.product-list-page .top-wrapper .top.primary .right a:focus,
-body.page-stories .top-wrapper .top.primary .right a.active,
-body.page-stories .top-wrapper .top.primary .right a:hover,
-body.page-stories .top-wrapper .top.primary .right a:focus,
-body.node-type-hotel-list-page .top-wrapper .top.primary .right a.active,
-body.node-type-hotel-list-page .top-wrapper .top.primary .right a:hover,
-body.node-type-hotel-list-page .top-wrapper .top.primary .right a:focus {
+product-list-page .top-wrapper .top.primary .right a.active,
+product-list-page .top-wrapper .top.primary .right a:hover,
+product-list-page .top-wrapper .top.primary .right a:focus,
+page-stories .top-wrapper .top.primary .right a.active,
+page-stories .top-wrapper .top.primary .right a:hover,
+page-stories .top-wrapper .top.primary .right a:focus,
+node-type-hotel-list-page .top-wrapper .top.primary .right a.active,
+node-type-hotel-list-page .top-wrapper .top.primary .right a:hover,
+node-type-hotel-list-page .top-wrapper .top.primary .right a:focus {
   color: #282828
 }
 
-html.resized body.product-list-page .top-wrapper .top.primary .right a,
-html.resized body.page-stories .top-wrapper .top.primary .right a,
-html.resized body.node-type-hotel-list-page .top-wrapper .top.primary .right a {
+html.resized product-list-page .top-wrapper .top.primary .right a,
+html.resized page-stories .top-wrapper .top.primary .right a,
+html.resized node-type-hotel-list-page .top-wrapper .top.primary .right a {
   color: #a0a0a0 !important
 }
 
-html.resized body.product-list-page .top-wrapper .top.primary .right a.active,
-html.resized body.product-list-page .top-wrapper .top.primary .right a:hover,
-html.resized body.product-list-page .top-wrapper .top.primary .right a:focus,
-html.resized body.page-stories .top-wrapper .top.primary .right a.active,
-html.resized body.page-stories .top-wrapper .top.primary .right a:hover,
-html.resized body.page-stories .top-wrapper .top.primary .right a:focus,
-html.resized body.node-type-hotel-list-page .top-wrapper .top.primary .right a.active,
-html.resized body.node-type-hotel-list-page .top-wrapper .top.primary .right a:hover,
-html.resized body.node-type-hotel-list-page .top-wrapper .top.primary .right a:focus {
+html.resized product-list-page .top-wrapper .top.primary .right a.active,
+html.resized product-list-page .top-wrapper .top.primary .right a:hover,
+html.resized product-list-page .top-wrapper .top.primary .right a:focus,
+html.resized page-stories .top-wrapper .top.primary .right a.active,
+html.resized page-stories .top-wrapper .top.primary .right a:hover,
+html.resized page-stories .top-wrapper .top.primary .right a:focus,
+html.resized node-type-hotel-list-page .top-wrapper .top.primary .right a.active,
+html.resized node-type-hotel-list-page .top-wrapper .top.primary .right a:hover,
+html.resized node-type-hotel-list-page .top-wrapper .top.primary .right a:focus {
   color: #282828 !important
 }
 
@@ -4810,160 +4810,160 @@ html.resized body.node-type-hotel-list-page .top-wrapper .top.primary .right a:f
     top: 0
   }
 
-  body.front-page .top-wrapper,
-  body.kitchen-page .top-wrapper {
+  front-page .top-wrapper,
+  kitchen-page .top-wrapper {
     position: absolute
   }
 
-  body.front-page .top-wrapper .top.primary .logo-black,
-  body.kitchen-page .top-wrapper .top.primary .logo-black {
+  front-page .top-wrapper .top.primary .logo-black,
+  kitchen-page .top-wrapper .top.primary .logo-black {
     display: none
   }
 
-  body.front-page .top-wrapper .top.primary .logo-white,
-  body.kitchen-page .top-wrapper .top.primary .logo-white {
+  front-page .top-wrapper .top.primary .logo-white,
+  kitchen-page .top-wrapper .top.primary .logo-white {
     display: inline
   }
 
-  body.front-page .top-wrapper .top.primary a,
-  body.front-page .top-wrapper .top.primary a:hover,
-  body.kitchen-page .top-wrapper .top.primary a,
-  body.kitchen-page .top-wrapper .top.primary a:hover {
+  front-page .top-wrapper .top.primary a,
+  front-page .top-wrapper .top.primary a:hover,
+  kitchen-page .top-wrapper .top.primary a,
+  kitchen-page .top-wrapper .top.primary a:hover {
     color: #ffffff !important
   }
 
-  body.front-page .top-wrapper .top.primary a span,
-  body.front-page .top-wrapper .top.primary a:hover span,
-  body.kitchen-page .top-wrapper .top.primary a span,
-  body.kitchen-page .top-wrapper .top.primary a:hover span {
+  front-page .top-wrapper .top.primary a span,
+  front-page .top-wrapper .top.primary a:hover span,
+  kitchen-page .top-wrapper .top.primary a span,
+  kitchen-page .top-wrapper .top.primary a:hover span {
     color: #ffffff
   }
 
-  body.front-page .top-wrapper .top.primary .basket-icn--black,
-  body.kitchen-page .top-wrapper .top.primary .basket-icn--black {
+  front-page .top-wrapper .top.primary .basket-icn--black,
+  kitchen-page .top-wrapper .top.primary .basket-icn--black {
     display: none
   }
 
-  body.front-page .top-wrapper .top.primary .basket-icn--white,
-  body.kitchen-page .top-wrapper .top.primary .basket-icn--white {
+  front-page .top-wrapper .top.primary .basket-icn--white,
+  kitchen-page .top-wrapper .top.primary .basket-icn--white {
     display: inline-block
   }
 
-  body.front-page .top-wrapper .top.primary .icon-menu--black,
-  body.kitchen-page .top-wrapper .top.primary .icon-menu--black {
+  front-page .top-wrapper .top.primary .icon-menu--black,
+  kitchen-page .top-wrapper .top.primary .icon-menu--black {
     display: none
   }
 
-  body.front-page .top-wrapper .top.primary .icon-menu--white,
-  body.kitchen-page .top-wrapper .top.primary .icon-menu--white {
+  front-page .top-wrapper .top.primary .icon-menu--white,
+  kitchen-page .top-wrapper .top.primary .icon-menu--white {
     display: inline
   }
 
-  html.resized body.front-page .top-wrapper,
-  html.resized body.kitchen-page .top-wrapper {
+  html.resized front-page .top-wrapper,
+  html.resized kitchen-page .top-wrapper {
     position: static
   }
 
-  html.resized body.front-page .top-wrapper .top.primary,
-  html.resized body.kitchen-page .top-wrapper .top.primary {
+  html.resized front-page .top-wrapper .top.primary,
+  html.resized kitchen-page .top-wrapper .top.primary {
     background: #ffffff
   }
 
-  html.resized body.front-page .top-wrapper .top.primary .logo-black,
-  html.resized body.kitchen-page .top-wrapper .top.primary .logo-black {
+  html.resized front-page .top-wrapper .top.primary .logo-black,
+  html.resized kitchen-page .top-wrapper .top.primary .logo-black {
     display: inline
   }
 
-  html.resized body.front-page .top-wrapper .top.primary .logo-white,
-  html.resized body.kitchen-page .top-wrapper .top.primary .logo-white {
+  html.resized front-page .top-wrapper .top.primary .logo-white,
+  html.resized kitchen-page .top-wrapper .top.primary .logo-white {
     display: none
   }
 
-  html.resized body.front-page .top-wrapper .top.primary a,
-  html.resized body.front-page .top-wrapper .top.primary a:hover,
-  html.resized body.kitchen-page .top-wrapper .top.primary a,
-  html.resized body.kitchen-page .top-wrapper .top.primary a:hover {
+  html.resized front-page .top-wrapper .top.primary a,
+  html.resized front-page .top-wrapper .top.primary a:hover,
+  html.resized kitchen-page .top-wrapper .top.primary a,
+  html.resized kitchen-page .top-wrapper .top.primary a:hover {
     color: #282828 !important
   }
 
-  html.resized body.front-page .top-wrapper .top.primary a span,
-  html.resized body.front-page .top-wrapper .top.primary a:hover span,
-  html.resized body.kitchen-page .top-wrapper .top.primary a span,
-  html.resized body.kitchen-page .top-wrapper .top.primary a:hover span {
+  html.resized front-page .top-wrapper .top.primary a span,
+  html.resized front-page .top-wrapper .top.primary a:hover span,
+  html.resized kitchen-page .top-wrapper .top.primary a span,
+  html.resized kitchen-page .top-wrapper .top.primary a:hover span {
     color: #282828 !important
   }
 
-  html.resized body.front-page .top-wrapper .top.primary .basket-icn--black,
-  html.resized body.kitchen-page .top-wrapper .top.primary .basket-icn--black {
+  html.resized front-page .top-wrapper .top.primary .basket-icn--black,
+  html.resized kitchen-page .top-wrapper .top.primary .basket-icn--black {
     display: inline-block
   }
 
-  html.resized body.front-page .top-wrapper .top.primary .basket-icn--white,
-  html.resized body.kitchen-page .top-wrapper .top.primary .basket-icn--white {
+  html.resized front-page .top-wrapper .top.primary .basket-icn--white,
+  html.resized kitchen-page .top-wrapper .top.primary .basket-icn--white {
     display: none
   }
 
-  html.resized body.front-page .top-wrapper .top.primary .icon-menu--black,
-  html.resized body.kitchen-page .top-wrapper .top.primary .icon-menu--black {
+  html.resized front-page .top-wrapper .top.primary .icon-menu--black,
+  html.resized kitchen-page .top-wrapper .top.primary .icon-menu--black {
     display: inline
   }
 
-  html.resized body.front-page .top-wrapper .top.primary .icon-menu--white,
-  html.resized body.kitchen-page .top-wrapper .top.primary .icon-menu--white {
+  html.resized front-page .top-wrapper .top.primary .icon-menu--white,
+  html.resized kitchen-page .top-wrapper .top.primary .icon-menu--white {
     display: none
   }
 
-  body.front-page .top,
-  body.kitchen-page .top {
+  front-page .top,
+  kitchen-page .top {
     background: rgba(255, 255, 255, 0)
   }
 
-  body.front-page .top.resized,
-  body.kitchen-page .top.resized {
+  front-page .top.resized,
+  kitchen-page .top.resized {
     background: #ffffff
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary .logo-black,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary .logo-black {
+  front-page.menu-dark-grey .top-wrapper .top.primary .logo-black,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary .logo-black {
     display: inline
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary .logo-white,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary .logo-white {
+  front-page.menu-dark-grey .top-wrapper .top.primary .logo-white,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary .logo-white {
     display: none
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary a,
-  body.front-page.menu-dark-grey .top-wrapper .top.primary a:hover,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary a,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary a:hover {
+  front-page.menu-dark-grey .top-wrapper .top.primary a,
+  front-page.menu-dark-grey .top-wrapper .top.primary a:hover,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary a,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary a:hover {
     color: #282828 !important
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary a span,
-  body.front-page.menu-dark-grey .top-wrapper .top.primary a:hover span,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary a span,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary a:hover span {
+  front-page.menu-dark-grey .top-wrapper .top.primary a span,
+  front-page.menu-dark-grey .top-wrapper .top.primary a:hover span,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary a span,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary a:hover span {
     color: #282828 !important
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--black,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--black {
+  front-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--black,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--black {
     display: inline-block
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--white,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--white {
+  front-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--white,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary .basket-icn--white {
     display: none
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--black,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--black {
+  front-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--black,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--black {
     display: inline
   }
 
-  body.front-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--white,
-  body.kitchen-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--white {
+  front-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--white,
+  kitchen-page.menu-dark-grey .top-wrapper .top.primary .icon-menu--white {
     display: none
   }
 }
@@ -5045,15 +5045,15 @@ a.un-active {
   cursor: default
 }
 
-body.page-user.not-logged-in .wrapper-main-content .container-fluid {
+page-user.not-logged-in .wrapper-main-content .container-fluid {
   padding-top: 84px
 }
 
-body.page-user .footer {
+page-user .footer {
   display: none
 }
 
-body.page-user #cookie {
+page-user #cookie {
   display: none
 }
 
@@ -5246,8 +5246,8 @@ body.page-user #cookie {
   color: #282828
 }
 
-body.kitchen-page .mod-stories-thumb,
-body.story-page .mod-stories-thumb {
+kitchen-page .mod-stories-thumb,
+story-page .mod-stories-thumb {
   margin-top: 0
 }
 
@@ -6423,7 +6423,7 @@ screen and (min-device-pixel-ratio:1.5) {
     padding-top: 57.14286%
   }
 
-  body.pages .slider.slider-module {
+  pages .slider.slider-module {
     margin-bottom: 100px
   }
 
@@ -6781,19 +6781,19 @@ html.resized.open-extra-menu .sidebar>ul {
   top: calc(60px + 60px)
 }
 
-body.logged-in .sidebar>ul {
+logged-in .sidebar>ul {
   top: calc(79px + 84px)
 }
 
-html.open-extra-menu body.logged-in .sidebar>ul {
+html.open-extra-menu logged-in .sidebar>ul {
   top: calc(79px + 84px + 84px)
 }
 
-body.logged-in.admin-2-lines .sidebar>ul {
+logged-in.admin-2-lines .sidebar>ul {
   top: calc(118px + 84px)
 }
 
-html.open-extra-menu body.logged-in.admin-2-lines .sidebar>ul {
+html.open-extra-menu logged-in.admin-2-lines .sidebar>ul {
   top: calc(118px + 84px + 84px)
 }
 
@@ -6851,7 +6851,7 @@ html.open-extra-menu.resized .sidebar.fixed {
   padding-top: 120px
 }
 
-body.product-page .sidebar {
+product-page .sidebar {
   display: none
 }
 
@@ -7523,7 +7523,7 @@ body.product-page .sidebar {
   color: #282828
 }
 
-body.open-tray-menu .tray-menu {
+open-tray-menu .tray-menu {
   left: 0;
   -webkit-transition: left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.3s;
   -o-transition: left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.3s;
@@ -7659,15 +7659,15 @@ a.btn-menu-burger .icon-close {
   display: none
 }
 
-body.open-tray-menu a.btn-menu-burger .icon-menu {
+open-tray-menu a.btn-menu-burger .icon-menu {
   opacity: 0 !important
 }
 
-body.open-tray-menu a.btn-menu-burger .icon-close {
+open-tray-menu a.btn-menu-burger .icon-close {
   display: inline-block
 }
 
-body.open-tray-menu .tray-menu--mask {
+open-tray-menu .tray-menu--mask {
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53), visibility 0s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s;
@@ -8822,7 +8822,7 @@ html.videoautoplay .text-n-img-slider-md .img-comp-wrapper.has_video video {
     line-height: 46px
   }
 
-  html.open-extra-menu body.story-page .top-story-md--content {
+  html.open-extra-menu story-page .top-story-md--content {
     height: calc(3 / 4 * 100vh + 84px)
   }
 
@@ -8869,7 +8869,7 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s
 }
 
-body.page-user.not-logged-in .error_message {
+page-user.not-logged-in .error_message {
   visibility: hidden
 }
 
@@ -9372,66 +9372,66 @@ html.open-extra-menu.resized .wrapper-main-content {
   padding-top: 60px
 }
 
-body.product-list-page .wrapper-main-content .has-product-list,
-body.category-list-page .wrapper-main-content .has-product-list {
+product-list-page .wrapper-main-content .has-product-list,
+category-list-page .wrapper-main-content .has-product-list {
   padding-top: 84px;
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
-html.resized body.product-list-page .wrapper-main-content .has-product-list,
-html.resized body.category-list-page .wrapper-main-content .has-product-list {
+html.resized product-list-page .wrapper-main-content .has-product-list,
+html.resized category-list-page .wrapper-main-content .has-product-list {
   padding-top: 60px
 }
 
-body.story-page .wrapper-main-content,
-body.node-type-hotel .wrapper-main-content {
+story-page .wrapper-main-content,
+node-type-hotel .wrapper-main-content {
   position: fixed;
   z-index: 1;
   width: 100%
 }
 
-body.story-page .wrapper-main-content.scroll,
-body.node-type-hotel .wrapper-main-content.scroll {
+story-page .wrapper-main-content.scroll,
+node-type-hotel .wrapper-main-content.scroll {
   overflow-x: hidden;
   position: absolute;
   top: 600px
 }
 
-body.page-user.navbar-administration .wrapper-main-content {
+page-user.navbar-administration .wrapper-main-content {
   padding-top: 84px
 }
 
 @media (max-width:1023px) {
-  body.product-list-page .wrapper-main-content .has-product-list {
+  product-list-page .wrapper-main-content .has-product-list {
     padding-top: 50px
   }
 
-  body.checkout-page .wrapper-main-content .items-into-cart,
-  body.category-list-page .wrapper-main-content .has-product-list {
+  checkout-page .wrapper-main-content .items-into-cart,
+  category-list-page .wrapper-main-content .has-product-list {
     padding-top: 60px
   }
 
-  body.checkout-page--confirm-step .wrapper-main-content #commerce-checkout-form-complete {
+  checkout-page--confirm-step .wrapper-main-content #commerce-checkout-form-complete {
     padding-top: 60px
   }
 }
 
-body.front-page .top.primary .wrap .right[fade-onload],
-body.front-page .top.primary .wrap a[fade-onload] {
+front-page .top.primary .wrap .right[fade-onload],
+front-page .top.primary .wrap a[fade-onload] {
   -webkit-transition: opacity 0.3s ease-in-out 0.3s;
   -o-transition: opacity 0.3s ease-in-out 0.3s;
   transition: opacity 0.3s ease-in-out 0.3s
 }
 
-body.front-page .product-list li .item .line,
-body.front-page .product-list li .item .container {
+front-page .product-list li .item .line,
+front-page .product-list li .item .container {
   opacity: 0
 }
 
-body.front-page .product-list li .item.in-view .line,
-body.front-page .product-list li .item.in-view .container {
+front-page .product-list li .item.in-view .line,
+front-page .product-list li .item.in-view .container {
   opacity: 1
 }
 
@@ -10179,7 +10179,7 @@ Fade product og info ud 0.63 .products .grid:hover>.container,
   display: block
 }
 
-body.product-page.zoom-expanded .module-product-info .wrapper-gallery {
+product-page.zoom-expanded .module-product-info .wrapper-gallery {
   cursor: url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-cross-out.png), pointer
 }
 
@@ -10559,45 +10559,45 @@ body.product-page.zoom-expanded .module-product-info .wrapper-gallery {
   }
 }
 
-body.product-page .wrapper-fix .hero-story-container .hero-story-description {
+product-page .wrapper-fix .hero-story-container .hero-story-description {
   opacity: 0;
   -webkit-transition: opacity 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.75s;
   -o-transition: opacity 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.75s;
   transition: opacity 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.75s
 }
 
-body.product-page .wrapper-fix .hero-story-container.in-view .hero-story-description {
+product-page .wrapper-fix .hero-story-container.in-view .hero-story-description {
   opacity: 1
 }
 
-body.product-page .product-list li .item .line,
-body.product-page .product-list li .item .container {
+product-page .product-list li .item .line,
+product-page .product-list li .item .container {
   opacity: 0
 }
 
-body.product-page .product-list li .item.in-view .line,
-body.product-page .product-list li .item.in-view .container {
+product-page .product-list li .item.in-view .line,
+product-page .product-list li .item.in-view .container {
   opacity: 1
 }
 
-body.product-page .block {
+product-page .block {
   background-color: #f5f5f5
 }
 
-body.product-page .block.full {
+product-page .block.full {
   padding: 0
 }
 
-body.product-page.zoom-expanded .zoom-expanded__hidden {
+product-page.zoom-expanded .zoom-expanded__hidden {
   display: none
 }
 
-body.product-page.zoom-expanded .wrapper-scroll {
+product-page.zoom-expanded .wrapper-scroll {
   margin-bottom: 0 !important
 }
 
 @media (max-width:1023px) {
-  body.product-page .wrapper-gallery-mobile {
+  product-page .wrapper-gallery-mobile {
     margin-left: -1px
   }
 }
@@ -10840,7 +10840,7 @@ body.product-page.zoom-expanded .wrapper-scroll {
   border-top: 1px solid #282828
 }
 
-body.product-page #modalContent {
+product-page #modalContent {
   top: -50% !important;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -10852,11 +10852,11 @@ body.product-page #modalContent {
   transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s
 }
 
-body.product-page #modalContent.in {
+product-page #modalContent.in {
   top: 50% !important
 }
 
-body.product-page .ctools-modal-content {
+product-page .ctools-modal-content {
   opacity: 0;
   min-height: 350px !important;
   width: 555px !important;
@@ -10865,7 +10865,7 @@ body.product-page .ctools-modal-content {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
 }
 
-body.product-page .ctools-modal-content .messages.error {
+product-page .ctools-modal-content .messages.error {
   position: absolute;
   bottom: 90px;
   background: transparent;
@@ -10873,11 +10873,11 @@ body.product-page .ctools-modal-content .messages.error {
   margin-left: 10px
 }
 
-body.product-page .ctools-modal-content .modal-header {
+product-page .ctools-modal-content .modal-header {
   display: none
 }
 
-body.product-page .ctools-modal-content .modal-content {
+product-page .ctools-modal-content .modal-content {
   width: 100% !important;
   height: 100% !important;
   padding: 0;
@@ -10886,30 +10886,30 @@ body.product-page .ctools-modal-content .modal-content {
   box-shadow: none
 }
 
-body.product-page .ctools-modal-content .notify-wrapper {
+product-page .ctools-modal-content .notify-wrapper {
   padding: 60px 57px
 }
 
-body.product-page .ctools-modal-content .notify-wrapper h3 {
+product-page .ctools-modal-content .notify-wrapper h3 {
   font-size: 28px;
   line-height: 28px;
   margin: 0;
   margin-bottom: 35px
 }
 
-body.product-page .ctools-modal-content .notify-wrapper .notify-description {
+product-page .ctools-modal-content .notify-wrapper .notify-description {
   font-size: 14px;
   line-height: 22px
 }
 
-body.product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item {
+product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item {
   position: relative;
   padding: 10px 20px;
   margin: 0;
   border: 1px solid #dcdcdc
 }
 
-body.product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item label {
+product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item label {
   font-size: 14px;
   line-height: 30px;
   font-weight: 300;
@@ -10917,11 +10917,11 @@ body.product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-ite
   margin: 0
 }
 
-body.product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item label span.form-required {
+product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item label span.form-required {
   display: none
 }
 
-body.product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item input {
+product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-item input {
   width: 268px;
   border: 0;
   font-size: 14px;
@@ -10931,7 +10931,7 @@ body.product-page .ctools-modal-content .notify-wrapper .wrapper-input .form-ite
   padding-left: 10px
 }
 
-body.product-page .ctools-modal-content .notify-wrapper input[type="submit"] {
+product-page .ctools-modal-content .notify-wrapper input[type="submit"] {
   width: 160px;
   height: 40px;
   position: relative;
@@ -10952,13 +10952,13 @@ body.product-page .ctools-modal-content .notify-wrapper input[type="submit"] {
   font-size: 10px
 }
 
-body.product-page .ctools-modal-content .notify-wrapper:after {
+product-page .ctools-modal-content .notify-wrapper:after {
   display: block;
   content: '';
   clear: both
 }
 
-body.product-page .ctools-modal-content .close-popup {
+product-page .ctools-modal-content .close-popup {
   display: inline-block;
   position: absolute;
   top: 30px;
@@ -10966,20 +10966,20 @@ body.product-page .ctools-modal-content .close-popup {
   z-index: 10
 }
 
-body.product-page #notify-modal-link {
+product-page #notify-modal-link {
   font-family: Arial;
   font-size: 11px;
   line-height: 15px
 }
 
-body.product-page #notify-modal-link a {
+product-page #notify-modal-link a {
   font-size: 11px;
   line-height: 15px;
   display: inline-block;
   margin-top: 20px
 }
 
-body.product-page #notify-modal-link a:after {
+product-page #notify-modal-link a:after {
   display: block;
   content: '';
   border-top: 1px solid #282828
@@ -11881,14 +11881,14 @@ html.desktop .wrapper-content ul.product-list .item:not(.no-hover).text:hover>.l
   }
 }
 
-body.category-list-page .wrapper-fix .hero-story-container .hero-story-description {
+category-list-page .wrapper-fix .hero-story-container .hero-story-description {
   opacity: 0;
   -webkit-transition: opacity 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.75s;
   -o-transition: opacity 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.75s;
   transition: opacity 0.45s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.75s
 }
 
-body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-description {
+category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-description {
   opacity: 1
 }
 
@@ -12380,7 +12380,7 @@ body.category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-d
     font-size: 8px
   }
 
-  body.page-checkout-complete .checkout-page .view-content-cart .views-frm-cart .cont-item>div {
+  page-checkout-complete .checkout-page .view-content-cart .views-frm-cart .cont-item>div {
     padding-bottom: 7px
   }
 
@@ -19344,19 +19344,19 @@ html:not(.modal-open) [ng-app="KitchenConfigurator"] #CookingHood .svg-wrapper {
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
-body.page-stories .wrapper-main-content>div {
+page-stories .wrapper-main-content>div {
   padding-top: 84px;
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
-html.resized body.page-stories .wrapper-main-content>div {
+html.resized page-stories .wrapper-main-content>div {
   padding-top: 60px
 }
 
 @media (max-width:1023px) {
-  body.page-stories .wrapper-main-content>div {
+  page-stories .wrapper-main-content>div {
     padding-top: 50px
   }
 }
@@ -19672,7 +19672,7 @@ html.resized body.page-stories .wrapper-main-content>div {
   position: fixed
 }
 
-body.no-fixed-filter .stories-filter {
+no-fixed-filter .stories-filter {
   -webkit-transform: none;
   -moz-transform: none;
   -ms-transform: none;
@@ -19712,84 +19712,84 @@ body.no-fixed-filter .stories-filter {
   }
 }
 
-body.logged-in .btn-back {
+logged-in .btn-back {
   font-weight: 600
 }
 
-body.logged-in .btn-back span {
+logged-in .btn-back span {
   display: inline-block;
   padding-left: 10px
 }
 
-body.logged-in.navbar-administration .sidebar {
+logged-in.navbar-administration .sidebar {
   padding-top: 163px
 }
 
-html.open-extra-menu body.logged-in.navbar-administration .sidebar.fixed {
+html.open-extra-menu logged-in.navbar-administration .sidebar.fixed {
   padding-top: calc(168px + 79px)
 }
 
-body.logged-in.navbar-administration .top-wrapper .top.primary {
+logged-in.navbar-administration .top-wrapper .top.primary {
   top: 79px
 }
 
-body.logged-in.navbar-administration .top-wrapper .top.extra {
+logged-in.navbar-administration .top-wrapper .top.extra {
   top: -4px
 }
 
-body.logged-in.navbar-administration .top-wrapper.expanded .top.extra {
+logged-in.navbar-administration .top-wrapper.expanded .top.extra {
   top: 79px
 }
 
-body.logged-in.navbar-administration .top-wrapper.expanded .top.primary {
+logged-in.navbar-administration .top-wrapper.expanded .top.primary {
   top: 79px
 }
 
-body.logged-in.navbar-administration.admin-2-lines .top-wrapper .top.primary {
+logged-in.navbar-administration.admin-2-lines .top-wrapper .top.primary {
   top: 118px
 }
 
-body.logged-in.navbar-administration.admin-2-lines .top-wrapper .top.extra {
+logged-in.navbar-administration.admin-2-lines .top-wrapper .top.extra {
   top: calc(118px - 84px)
 }
 
-body.logged-in.navbar-administration.admin-2-lines .top-wrapper.expanded .top.extra {
+logged-in.navbar-administration.admin-2-lines .top-wrapper.expanded .top.extra {
   top: 118px
 }
 
-body.logged-in.navbar-administration.admin-2-lines .top-wrapper.expanded .top.primary {
+logged-in.navbar-administration.admin-2-lines .top-wrapper.expanded .top.primary {
   top: 118px
 }
 
-html.resized body.logged-in.navbar-administration .sidebar.fixed {
+html.resized logged-in.navbar-administration .sidebar.fixed {
   padding-top: 140px
 }
 
-html.resized body.logged-in.navbar-administration .top-wrapper .top.extra {
+html.resized logged-in.navbar-administration .top-wrapper .top.extra {
   top: 20px
 }
 
-html.resized body.logged-in.navbar-administration .top-wrapper.expanded .top.resized.extra {
+html.resized logged-in.navbar-administration .top-wrapper.expanded .top.resized.extra {
   top: 80px
 }
 
-html.resized body.logged-in.navbar-administration.admin-2-lines .top-wrapper .top.extra {
+html.resized logged-in.navbar-administration.admin-2-lines .top-wrapper .top.extra {
   top: calc(118px - 60px)
 }
 
-html.resized body.logged-in.navbar-administration.admin-2-lines .top-wrapper.expanded .top.resized.extra {
+html.resized logged-in.navbar-administration.admin-2-lines .top-wrapper.expanded .top.resized.extra {
   top: 118px
 }
 
-html.resized.open-extra-menu body.logged-in.navbar-administration .sidebar.fixed {
+html.resized.open-extra-menu logged-in.navbar-administration .sidebar.fixed {
   padding-top: 200px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content {
+logged-in.page-user-orders .wrapper-main-content {
   padding-top: 84px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content>.container-fluid {
+logged-in.page-user-orders .wrapper-main-content>.container-fluid {
   margin-left: 35px;
   margin-right: 39px;
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -19797,27 +19797,27 @@ body.logged-in.page-user-orders .wrapper-main-content>.container-fluid {
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
 }
 
-html.open-extra-menu body.logged-in.page-user-orders .wrapper-main-content .container-fluid {
+html.open-extra-menu logged-in.page-user-orders .wrapper-main-content .container-fluid {
   padding-top: 84px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .logout {
+logged-in.page-user-orders .wrapper-main-content .logout {
   float: right;
   text-decoration: underline;
   font-weight: 600
 }
 
-body.logged-in.page-user-orders .wrapper-main-content h1 {
+logged-in.page-user-orders .wrapper-main-content h1 {
   font-size: 28px;
   line-height: 34px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content h2 {
+logged-in.page-user-orders .wrapper-main-content h2 {
   font-size: 22px;
   line-height: 28px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table {
+logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table {
   width: 100%;
   background: transparent;
   border: 0;
@@ -19825,69 +19825,69 @@ body.logged-in.page-user-orders .wrapper-main-content .view-content>table.views-
   table-layout: fixed
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table tbody,
-body.logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table th,
-body.logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table tr,
-body.logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table td {
+logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table tbody,
+logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table th,
+logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table tr,
+logged-in.page-user-orders .wrapper-main-content .view-content>table.views-table td {
   background: transparent;
   border: 0
 }
 
 @media (min-width:1024px) {
-  body.logged-in.page-user-orders .wrapper-main-content .container-fluid .form {
+  logged-in.page-user-orders .wrapper-main-content .container-fluid .form {
     padding-left: 45px;
     padding-right: 45px
   }
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order h1 {
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order h1 {
   display: none
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order h4 {
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order h4 {
   font-size: 28px;
   line-height: 34px;
   font-weight: 600
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .order-content .products-list .product-item h4 {
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .order-content .products-list .product-item h4 {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 300
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .order-content .products-list .product-item b {
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .order-content .products-list .product-item b {
   font-weight: 300;
   font-size: 14px;
   line-height: 20px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components {
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components {
   margin-top: 30px
 }
 
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components tr,
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components td,
-body.logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components tbody {
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components tr,
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components td,
+logged-in.page-user-orders .wrapper-main-content .entity-commerce-order .commerce-price-formatted-components tbody {
   background: transparent;
   border: 0
 }
 
-body.page-user-edit .title-head {
+page-user-edit .title-head {
   font-size: 28px;
   line-height: 34px;
   font-weight: 600;
   margin-bottom: 20px
 }
 
-body.page-user-edit form {
+page-user-edit form {
   margin-left: -1px;
   margin-right: -1px;
   margin-top: 100px
 }
 
-body.page-user-edit form>div:first-child {
+page-user-edit form>div:first-child {
   position: relative;
   min-height: 1px;
   float: left;
@@ -19896,129 +19896,129 @@ body.page-user-edit form>div:first-child {
   padding-right: calc(1/14 * 100% + 1px)
 }
 
-body.page-user-edit form #edit-account {
+page-user-edit form #edit-account {
   width: 50%
 }
 
-body.page-user-edit form #edit-account .form-item.form-item-mail,
-body.page-user-edit form #edit-account .form-item.form-item-current-pass {
+page-user-edit form #edit-account .form-item.form-item-mail,
+page-user-edit form #edit-account .form-item.form-item-current-pass {
   padding: 9px 20px;
   border: 1px solid #dcdcdc
 }
 
-body.page-user-edit form #edit-account .form-item.form-item-pass>.form-item,
-body.page-user-edit form #edit-account .checkout-page--info-detail-step [id*='edit-customer-profile-shipping-field-phone-number'] .form-item-pass.form-item>.form-item {
+page-user-edit form #edit-account .form-item.form-item-pass>.form-item,
+page-user-edit form #edit-account .checkout-page--info-detail-step [id*='edit-customer-profile-shipping-field-phone-number'] .form-item-pass.form-item>.form-item {
   padding: 15px 20px;
   border: 1px solid #dcdcdc;
   width: 100%;
   margin-bottom: 10px
 }
 
-body.page-user-edit form #edit-account .description>a {
+page-user-edit form #edit-account .description>a {
   border-bottom: 1px solid #969696
 }
 
-body.page-user-edit form #edit-field-phone-number {
+page-user-edit form #edit-field-phone-number {
   width: 50%
 }
 
-body.page-user-edit form #edit-field-phone-number>div>.form-item,
-body.page-user-edit form .checkout-page--info-detail-step [id*='edit-customer-profile-shipping-field-phone-number'] #edit-field-phone-number>div>.form-item {
+page-user-edit form #edit-field-phone-number>div>.form-item,
+page-user-edit form .checkout-page--info-detail-step [id*='edit-customer-profile-shipping-field-phone-number'] #edit-field-phone-number>div>.form-item {
   margin: 0;
   padding: 9px 20px;
   border: 1px solid #dcdcdc
 }
 
-body.page-user-edit form #edit-field-phone-number>div>.form-item label span.form-required,
-body.page-user-edit form .checkout-page--info-detail-step [id*='edit-customer-profile-shipping-field-phone-number'] #edit-field-phone-number>div>.form-item label span.form-required {
+page-user-edit form #edit-field-phone-number>div>.form-item label span.form-required,
+page-user-edit form .checkout-page--info-detail-step [id*='edit-customer-profile-shipping-field-phone-number'] #edit-field-phone-number>div>.form-item label span.form-required {
   left: calc(100% - 30px)
 }
 
-body.page-user-edit form #edit-timezone,
-body.page-user-edit form #edit-field-shipping-info,
-body.page-user-edit form #edit-field-billing-info {
+page-user-edit form #edit-timezone,
+page-user-edit form #edit-field-shipping-info,
+page-user-edit form #edit-field-billing-info {
   width: 50%
 }
 
-body.page-user-edit form #edit-timezone {
+page-user-edit form #edit-timezone {
   display: block;
   min-height: 50px
 }
 
-body.page-user-edit form #edit-field-shipping-info .form-item {
+page-user-edit form #edit-field-shipping-info .form-item {
   margin: 0
 }
 
-body.page-user-edit form #edit-field-shipping-info .form-item .form-required {
+page-user-edit form #edit-field-shipping-info .form-item .form-required {
   color: #282828
 }
 
-body.page-user-edit form #edit-field-shipping-info legend {
+page-user-edit form #edit-field-shipping-info legend {
   border: 0
 }
 
-body.page-user-edit form #edit-field-shipping-info .fieldset-wrapper>div {
+page-user-edit form #edit-field-shipping-info .fieldset-wrapper>div {
   padding: 9px 20px;
   border: 1px solid #dcdcdc;
   margin-bottom: 10px
 }
 
-body.page-user-edit form #edit-field-shipping-info .fieldset-wrapper .street-block {
+page-user-edit form #edit-field-shipping-info .fieldset-wrapper .street-block {
   padding: 0;
   margin: 0;
   border: 0
 }
 
-body.page-user-edit form #edit-field-shipping-info .fieldset-wrapper .street-block .form-item {
+page-user-edit form #edit-field-shipping-info .fieldset-wrapper .street-block .form-item {
   padding: 9px 20px;
   border: 1px solid #dcdcdc;
   width: 100%;
   margin-bottom: 10px
 }
 
-body.page-user-edit form #edit-field-billing-info legend {
+page-user-edit form #edit-field-billing-info legend {
   border: 0
 }
 
-body.page-user-edit form #edit-field-billing-info fieldset>legend:first-child {
+page-user-edit form #edit-field-billing-info fieldset>legend:first-child {
   display: none
 }
 
-body.page-user-edit form #edit-field-billing-info .form-item {
+page-user-edit form #edit-field-billing-info .form-item {
   margin: 0
 }
 
-body.page-user-edit form #edit-field-billing-info .form-item .form-required {
+page-user-edit form #edit-field-billing-info .form-item .form-required {
   color: #282828
 }
 
-body.page-user-edit form #edit-field-billing-info .fieldset-wrapper>div {
+page-user-edit form #edit-field-billing-info .fieldset-wrapper>div {
   padding: 9px 20px;
   border: 1px solid #dcdcdc;
   margin-bottom: 10px
 }
 
-body.page-user-edit[class*='page-user-'] form #edit-account .form-item .form-required,
-body.page-user-edit[class*='page-user-'] form #edit-field-shipping-info .form-item .form-required,
-body.page-user-edit[class*='page-user-'] form #edit-field-billing-info .form-item .form-required {
+page-user-edit[class*='page-user-'] form #edit-account .form-item .form-required,
+page-user-edit[class*='page-user-'] form #edit-field-shipping-info .form-item .form-required,
+page-user-edit[class*='page-user-'] form #edit-field-billing-info .form-item .form-required {
   color: #282828;
   left: calc(100% - 30px);
   font-weight: 300
 }
 
-body.page-user-edit[class*='page-user-'] form #edit-account .name-block .form-item .form-required,
-body.page-user-edit[class*='page-user-'] form #edit-field-shipping-info .name-block .form-item .form-required,
-body.page-user-edit[class*='page-user-'] form #edit-field-billing-info .name-block .form-item .form-required {
+page-user-edit[class*='page-user-'] form #edit-account .name-block .form-item .form-required,
+page-user-edit[class*='page-user-'] form #edit-field-shipping-info .name-block .form-item .form-required,
+page-user-edit[class*='page-user-'] form #edit-field-billing-info .name-block .form-item .form-required {
   left: calc(100% - 10px)
 }
 
-body.page-user-edit[class*='page-user-'] form #edit-account .form-item.form-type-select span.form-required,
-body.page-user-edit[class*='page-user-'] form #edit-field-shipping-info .form-item.form-type-select span.form-required,
-body.page-user-edit[class*='page-user-'] form #edit-field-billing-info .form-item.form-type-select span.form-required {
+page-user-edit[class*='page-user-'] form #edit-account .form-item.form-type-select span.form-required,
+page-user-edit[class*='page-user-'] form #edit-field-shipping-info .form-item.form-type-select span.form-required,
+page-user-edit[class*='page-user-'] form #edit-field-billing-info .form-item.form-type-select span.form-required {
   left: calc(100% - 40px)
 }
 
-body.page-user-edit[class*='page-user-'] form #edit-submit {
+page-user-edit[class*='page-user-'] form #edit-submit {
   height: 39px;
   min-width: 250px;
   font-size: 11px;
@@ -20027,31 +20027,31 @@ body.page-user-edit[class*='page-user-'] form #edit-submit {
   text-transform: uppercase
 }
 
-body.page-user-edit[class*='page-user-'] form .has-error {
+page-user-edit[class*='page-user-'] form .has-error {
   border-color: #c90000 !important
 }
 
 @media (max-width:1023px) {
 
-  body.page-user-edit form #edit-account,
-  body.page-user-edit form #edit-field-phone-number,
-  body.page-user-edit form #edit-timezone,
-  body.page-user-edit form #edit-field-shipping-info,
-  body.page-user-edit form #edit-field-billing-info {
+  page-user-edit form #edit-account,
+  page-user-edit form #edit-field-phone-number,
+  page-user-edit form #edit-timezone,
+  page-user-edit form #edit-field-shipping-info,
+  page-user-edit form #edit-field-billing-info {
     width: 100%
   }
 }
 
-body.page-user-orders h1 {
+page-user-orders h1 {
   margin-bottom: 77px
 }
 
-body.page-user-orders h2 {
+page-user-orders h2 {
   margin-top: 30px;
   margin-bottom: 0
 }
 
-body.page-user-orders .views-field-order-id>a {
+page-user-orders .views-field-order-id>a {
   display: inline-block;
   position: relative;
   font-size: 14px;
@@ -20059,7 +20059,7 @@ body.page-user-orders .views-field-order-id>a {
   margin-right: 15px
 }
 
-body.page-user-orders .views-field-order-id>a:after {
+page-user-orders .views-field-order-id>a:after {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -20068,8 +20068,8 @@ body.page-user-orders .views-field-order-id>a:after {
   border-top: 1px solid #979797
 }
 
-body.page-user-orders .change-email-password,
-body.page-user-orders .change-address {
+page-user-orders .change-email-password,
+page-user-orders .change-address {
   display: inline-block;
   position: relative;
   font-size: 14px;
@@ -20077,8 +20077,8 @@ body.page-user-orders .change-address {
   margin-right: 15px
 }
 
-body.page-user-orders .change-email-password:after,
-body.page-user-orders .change-address:after {
+page-user-orders .change-email-password:after,
+page-user-orders .change-address:after {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -20087,30 +20087,30 @@ body.page-user-orders .change-address:after {
   border-top: 1px solid #979797
 }
 
-body.page-user-orders .information-section {
+page-user-orders .information-section {
   margin-top: 30px;
   margin-bottom: 60px
 }
 
-body.page-user-orders .information-section h4 {
+page-user-orders .information-section h4 {
   font-weight: 600;
   margin-bottom: 0
 }
 
-body.page-user-orders .information-section h4 b {
+page-user-orders .information-section h4 b {
   margin-bottom: 5px;
   display: inline-block
 }
 
-body.page-user-orders .information-section .address-info {
+page-user-orders .information-section .address-info {
   margin-bottom: 30px
 }
 
-body.page-user-orders[class*="page-user-orders-"] .shipping-method {
+page-user-orders[class*="page-user-orders-"] .shipping-method {
   margin-top: 30px
 }
 
-body.page-user-orders[class*="page-user-orders-"] .field-name-field-phone-number .field-label {
+page-user-orders[class*="page-user-orders-"] .field-name-field-phone-number .field-label {
   display: none
 }
 
