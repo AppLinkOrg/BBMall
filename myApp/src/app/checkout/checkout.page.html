@@ -1,0 +1,250 @@
+<ion-content class="checkout-page checkout-page--info-detail-step">
+  <div class="fixtop" style="background:white;">
+    <div>
+      <div class="flex-row ">
+        <div class="padding" style="padding-right:0px;" (click)='close()'>
+          <ion-icon style="color:black" name="arrow-back" mode='ios' style="font-size:18px;"></ion-icon>
+        </div>
+        <div class="flex-1 text-center padding">
+          <div style="font-size:18px;">{{title}}</div>
+        </div>
+        <div class="padding flex-row flex-center" style="padding-left:0px;" (click)="windowslocation('/tabs/tab2')">
+          <ion-icon style="color:black" name="cart" mode='ios' style="font-size:18px;"></ion-icon>
+          &nbsp;{{cart.length>0?cart.length:""}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:60px"></div>
+
+  <div class="wrapper-main-content">
+    <div class="container-fluid ">
+
+
+
+      <form id="commerce-checkout-form-checkout" accept-charset="UTF-8">
+        <div>
+          <div class="col-xs-14 col-md-7 col-md-offset-1">
+            <div class="items-into-cart">
+              <div class="breadcrumb-line">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active">个人信息</li>
+                  <li class="breadcrumb-item">订单信息</li>
+                  <li class="breadcrumb-item ">支付</li>
+                </ol>
+              </div>
+              <div class="col-xs-12 col-xs-offset-1 col-md-offset-0">
+                <h1> 个人信息 <p> </p>
+                </h1>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <fieldset class="cart_contents form-wrapper form-wrapper col-xs-14 col-md-6 input-info-customer" id="edit-cart-contents">
+            <legend><span class="fieldset-legend">购物车</span></legend>
+            <div class="fieldset-wrapper">
+              <div class="row wrapper-content">
+                <div class="view-content-cart view view-commerce-cart-summary view-id-commerce_cart_summary view-display-id-default view-dom-id-05591cb937ce0f0f142a35be8024f0b9">
+
+                  <div class="view-content">
+
+                    <div class="view-content-cart view-detail-cart">
+                      <div [class.open]='opencartdetail==true' (click)='opencartdetail=!opencartdetail;' class="row thead-title">
+                        <div class="f-left">
+                          <h4>查看商品</h4>
+                          <h4>商品清单</h4>
+                        </div>
+                        <div class="f-right">
+                          <a href="/en-us/" class="underline">编辑</a>
+                          <span class="icon-arrow-down"></span>
+                        </div>
+                      </div>
+                      <div class="row views-frm-cart">
+                        <div class="row cont-item" *ngFor="let item of cart;let i=index;">
+                          <div class="col-xs-6 item-img">
+                            <a href="#"><img [src]="uploadpath+'goods/'+item.goodsattr.photo" alt=""> </a>
+                          </div>
+                          <div class="col-xs-6 item-description">
+                            <div class="item-number">{{item.goods.sno}}</div>
+                            <div class="name-product"><a>{{item.num}} x </a><a>{{item.goods.name}}</a></div>
+                            <div class="row">
+                              <div class="col-xs-4 color-product">
+                                <span>{{item.goodsattr.name}}</span>
+                              </div>
+                              <div class="col-xs-9 item-total">
+                                {{getCartItemAmount(item)}} {{InstInfo.current}} </div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+
+                        <div class="cont-total">
+                          <div class="count-price">
+                            <div class="for-item">
+                              <label class="field-lbl">邮费</label>
+                              <div id="shipping-price" class="field-item">{{getCartShipping()}} {{InstInfo.current}}</div>
+                            </div>
+                            <div class="for-item">
+                              <label class="field-lbl">总计</label>
+
+                              <div id="total-price" class="field-item">{{getCartTotalAmount()}} {{InstInfo.current}}</div>
+                            </div>
+                            <div class="for-item">
+                              <div class="f-left">
+                                <a class="underline" (click)='back()'></a>
+                              </div>
+                              <div class="f-right">
+                                <p>购物金额{{InstInfo.undershipping}}{{InstInfo.current}}起免邮费</p>
+
+                                <p><a (click)='nagivate("contactus")' class="underline" target="_blank">联系我们</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="col-xs-14 col-md-7 col-md-offset-1">
+            <div class="row input-info-customer">
+              <div class="col-xs-12 col-xs-offset-1 col-md-offset-0">
+
+                <div class="block-info block-sign-in " [class.open]='opensign==true'>
+                  <div class="title-sign">
+                    <span>已经成为我们的会员？ &nbsp;</span>
+                    <span class="underline" (click)='opensign=true;'> 立即登录 </span>
+                    <div class="clearfix"></div>
+                  </div>
+                  <fieldset class="account_form form-wrapper" id="edit-account-form">
+                    <legend><span class="fieldset-legend">Checkout method</span></legend>
+                    <div class="fieldset-wrapper">
+                      <div id="edit-account-form-select" class="form-wrapper">
+                        <fieldset class="form-wrapper" id="edit-account-form-select-login">
+                          <legend><span class="fieldset-legend">登录</span></legend>
+                          <div class="fieldset-wrapper">
+                            <div class="form-item form-type-textfield form-item-account-form-select-login-mail border-input">
+                              <label for="edit-account-form-select-login-mail">手机/邮箱 </label>
+                              <div class="wrapper-input"><input type="text" id="edit-account-form-select-login-mail"
+                                  name="account_form[select][login][mail]" [(ngModel)]='loginid' size="25" maxlength="128"
+                                  class="form-text"></div>
+                            </div>
+                            <div class="form-item form-type-password form-item-account-form-select-login-password">
+                              <label for="edit-account-form-select-login-password">密码 </label>
+                              <input type="password" id="edit-account-form-select-login-password" [(ngModel)]='password'
+                                name="account_form[select][login][password]" size="25" maxlength="128" class="form-text">
+                            </div>
+                            <div id="edit-account-form-select-login-request-password" class="form-item form-type-item">
+                              <a (click)='nagivate("register")'>快速注册</a>
+                            </div>
+                            <input type="button" id="edit-account-form-select-login-continue" name="login" value="登录"
+                              (click)='login(loginid,password)' class="form-submit">
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <fieldset class="account form-wrapper" id="edit-account">
+                  <legend><span class="fieldset-legend">联系信息</span></legend>
+                  <div class="fieldset-wrapper">
+                    <div id="account-login-container">
+                      <div id="edit-account-login" class="form-wrapper">
+                        <div class="form-item form-type-textfield form-item-account-login-mail border-input">
+                          <label for="edit-account-login-mail">手机/邮箱<span class="form-required" title="This field is required.">*</span></label>
+                          <div class="wrapper-input"><input autocomplete="email" type="text" id="edit-account-login-mail"
+                            [(ngModel)]='contact'  name="account[login][mail]" value="" size="60" maxlength="128" class="form-text required"></div>
+                        </div><span class="error-message"></span>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="customer_profile_shipping form-wrapper" id="edit-customer-profile-shipping">
+                  <legend><span class="fieldset-legend">送货信息</span></legend>
+                  <div class="fieldset-wrapper">
+                    <div class="field-type-addressfield field-name-commerce-customer-address field-widget-addressfield-standard form-wrapper"
+                      id="edit-customer-profile-shipping-commerce-customer-address">
+                      <div id="customer-profile-shipping-commerce-customer-address-add-more-wrapper">
+                        <div id="addressfield-wrapper">
+                          <div id="edit-customer-profile-shipping-commerce-customer-address-und-0" class="form-wrapper">
+                            <div class="addressfield-container-inline name-block">
+                              <div class="form-item form-type-textfield form-item-customer-profile-shipping-commerce-customer-address-und-0-name-line border-input">
+                                <label for="edit-customer-profile-shipping-commerce-customer-address-und-0-name-line">
+                                  收货人 <span class="form-required" title="This field is required.">*</span></label>
+                                <div class="wrapper-input"><input class="name-block form-text required" autocomplete="name"
+                                    placeholder="请填写收货人姓名" type="text" id="edit-customer-profile-shipping-commerce-customer-address-und-0-name-line"
+                                    name="customer_profile_shipping[commerce_customer_address][und][0][name_line]"
+                                    [(ngModel)]='name' value="" size="30" maxlength="50"></div>
+                              </div>
+                            </div>
+                            <div class="addressfield-container-inline name-block">
+                              <div class="form-item form-type-textfield form-item-customer-profile-shipping-commerce-customer-address-und-0-name-line border-input">
+                                <label for="edit-customer-profile-shipping-commerce-customer-address-und-0-name-line">
+                                  收货手机 <span class="form-required" title="This field is required.">*</span></label>
+                                <div class="wrapper-input"><input class="name-block form-text required" autocomplete="name"
+                                    placeholder="请填写收货人手机号" type="text" id="edit-customer-profile-shipping-commerce-customer-address-und-0-name-line"
+                                    name="customer_profile_shipping[commerce_customer_address][und][0][name_line]"
+                                    [(ngModel)]='mobile' value="" size="30" maxlength="50"></div>
+                              </div>
+                            </div>
+                            <div class="addressfield-container-inline organisation-block">
+                              <div class="form-item form-type-textfield form-item-customer-profile-shipping-commerce-customer-address-und-0-organisation-name border-input">
+                                <label for="edit-customer-profile-shipping-commerce-customer-address-und-0-organisation-name">所在地区
+                                </label>
+                                <div class="wrapper-input"><input placeholder="省市区县、乡镇等" class="organisation-name form-text"
+                                    autocomplete="organization" type="text" id="edit-customer-profile-shipping-commerce-customer-address-und-0-organisation-name"
+                                    name="customer_profile_shipping[commerce_customer_address][und][0][organisation_name]"
+                                    [(ngModel)]='city' value="" size="30" maxlength="50"></div>
+                              </div>
+                            </div>
+                            <div class="street-block">
+                              <div class="form-item form-type-textfield form-item-customer-profile-shipping-commerce-customer-address-und-0-thoroughfare border-input">
+                                <label for="edit-customer-profile-shipping-commerce-customer-address-und-0-thoroughfare">详细地址
+                                  <span class="form-required" title="This field is required.">*</span></label>
+                                <div class="wrapper-input"><input class="thoroughfare form-text required" autocomplete="address-line1"
+                                    placeholder="街道，小区门牌号等" type="text" id="edit-customer-profile-shipping-commerce-customer-address-und-0-thoroughfare"
+                                    name="customer_profile_shipping[commerce_customer_address][und][0][thoroughfare]"
+                                    [(ngModel)]='address' value="" size="30" maxlength="50"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="checkout-buttons form-wrapper" id="edit-buttons">
+                  <div class="fieldset-wrapper"><input class="checkout-continue form-submit checkout-processed" type="button"
+                      id="edit-continue" name="op" value="Continue to next step">
+                      <span class="checkout-processing element-invisible"></span><span
+                      class="button-operator">or</span><input class="checkout-cancel form-submit" type="submit" id="edit-cancel"
+                      name="op" value="Cancel"></div>
+                </fieldset>
+                <input type="hidden" name="form_build_id" value="form-NCLJggMso6cx4Tmb9NRUOxuxiONsyCcz6mo7AauSzdQ">
+                <input type="hidden" name="form_id" value="commerce_checkout_form_checkout">
+                <div class="clear"></div>
+                <!--error message-->
+                <div id="error" class="error-message">
+                  Please fill out all fields marked with * to continue </div>
+                <div class="clear"></div>
+                <div class="button-checkout">
+
+                  <input type="button" class="frm-btn-submit" (click)='submit()' value="继续完善订单详情">
+                </div>
+
+                <p class="back-btn"><a (click)='back()' class="underline">返回购物车</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

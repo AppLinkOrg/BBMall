@@ -25,7 +25,7 @@ export class AppBase implements OnInit {
     public static Resources = null;
     public res = [];
     public static InstInfo = null;
-    public InstInfo = { logo: "", memberlogo: "" };
+    public InstInfo = { logo: "", memberlogo: "",undershipping:0,shippingfee:0 };
     public MemberInfo = { id: "", name: "", photo: "", introduce: "" };
 
     public options = null;
@@ -293,5 +293,63 @@ export class AppBase implements OnInit {
         AppBase.Cart=cart;
         window.localStorage.setItem("cartstore",JSON.stringify(cart));
         this.cart=cart;
+    }
+    removeCartItem(item){
+        this.confirm("是否确认移除商品？",(res)=>{
+            if(res==false){
+                return;
+            }
+            
+            var cart = AppBase.Cart;
+            var ncart=[];
+            for (var i = 0; i < cart.length; i++) {
+                if(cart[i]!=item){
+                    ncart.push(cart[i]);
+                }
+            }
+            cart=ncart;
+            AppBase.Cart=cart;
+            window.localStorage.setItem("cartstore",JSON.stringify(cart));
+            this.cart=cart;
+
+        });
+    }
+    getCartAmount(){
+        var totalamount=0;
+        var cart = AppBase.Cart;
+        for (var i = 0; i < cart.length; i++) {
+            var price=Number(cart[i].goodsattr.price);
+            var num=Number(cart[i].num);
+            totalamount+=price*num;
+        }
+        return totalamount.toFixed(2);
+    }
+    getCartShipping(){
+        var totalamount=Number( this.getCartAmount());
+        var undershipping=Number( this.InstInfo.undershipping);
+        var shippingfee=Number( this.InstInfo.shippingfee);
+        if(totalamount>=undershipping){
+            return (0).toFixed(2);
+        }else{
+            return shippingfee.toFixed(2);
+        }
+    }
+    getCartTotalAmount(){
+        var totalamount=Number( this.getCartAmount());
+        var undershipping=Number( this.InstInfo.undershipping);
+        var shippingfee=Number( this.InstInfo.shippingfee);
+        if(totalamount>=undershipping){
+            return totalamount.toFixed(2);
+        }else{
+            return (totalamount+shippingfee).toFixed(2);
+        }
+    }
+    getCartItemAmount(item){
+        var amount=0;
+        var price=Number(item.goodsattr.price);
+        var num=Number(item.num);
+
+        amount=price*num;
+        return amount.toFixed(2);
     }
 }

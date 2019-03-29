@@ -13721,7 +13721,6 @@ category-list-page .wrapper-fix .hero-story-container.in-view .hero-story-descri
 .checkout-page--cart-step .delete-line-item {
   width: 10px;
   height: 10px;
-  background-image: url(http://vipp.com/sites/all/themes/vipp/assets/img/icon-remove.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;

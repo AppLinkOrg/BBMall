@@ -12,6 +12,7 @@ import { Http, HttpModule } from '@angular/http';
 import { StoryPage } from './story/story.page';
 import { GoodsPage } from './goods/goods.page';
 import { GoodscategoryPage } from './goodscategory/goodscategory.page';
+import { CheckoutPage } from './checkout/checkout.page';
 
 @NgModule({
   declarations: [AppComponent,StoryPage,GoodsPage,GoodscategoryPage],

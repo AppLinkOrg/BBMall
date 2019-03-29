@@ -7,6 +7,7 @@ import { GoodsApi } from 'src/providers/goods.api';
 import { StoryPage } from '../story/story.page';
 import { GoodsPage } from '../goods/goods.page';
 import { GoodscategoryPage } from '../goodscategory/goodscategory.page';
+import { CheckoutPage } from '../checkout/checkout.page';
 
 @Component({
   selector: 'app-tab2',
@@ -22,5 +23,18 @@ export class Tab2Page  extends AppBase {
     public alertCtrl: AlertController,
     public goodsApi: GoodsApi) {
     super(router, navCtrl, modalCtrl, toastCtrl, alertCtrl);
+  }
+  minusItem(item){
+    if(item.num<=1){
+      item.num=1;
+      return;
+    }
+    item.num--;
+  }
+  addItem(item){
+    item.num++;
+  }
+  gotoCheckout(){
+    this.nagivate("checkout")
   }
 }
